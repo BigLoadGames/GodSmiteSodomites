@@ -20,3 +20,7 @@ p {
 	margin-left:5%;
 	margin-top:10%;
 }
+.rightside {
+	float:right;
+	width:18%;
+}

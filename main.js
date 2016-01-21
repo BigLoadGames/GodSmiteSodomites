@@ -1,3 +1,10 @@
+// Vars
+
+// Functions
+function rightside(name) {
+  document.getElementById("rightside").innerHTML = name;
+}
+// Hover events
 document.getElementById("1").addEventListener("mouseover", one);
 document.getElementById("2").addEventListener("mouseover", two);
 document.getElementById("3").addEventListener("mouseover", three);
@@ -23,6 +30,10 @@ document.getElementById("22").addEventListener("mouseover", twentytwo);
 document.getElementById("23").addEventListener("mouseover", twentythree);
 document.getElementById("24").addEventListener("mouseover", twentyfour);
 
+// Click events
+document.getElementById("1").addEventListener("click", oneC);
+
+// Hover functions
 function one() {
     document.getElementById("info").innerHTML = "Nokuy";
 }
@@ -94,4 +105,9 @@ function twentythree() {
 }
 function twentyfour() {
     document.getElementById("info").innerHTML = "Adanac Ruof Ytnewt";
+}
+
+// Click functions
+function oneC() {
+    rightside("Click");
 }
