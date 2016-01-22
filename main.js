@@ -2,7 +2,10 @@
 
 // Functions
 function rightside(name) {
-  document.getElementById("rightside").innerHTML = name;
+    document.getElementById("rightside").innerHTML = name;
+}
+function info(name) {
+    document.getElementById("info").innerHTML = name;
 }
 // Hover events
 document.getElementById("1").addEventListener("mouseover", one);
@@ -32,82 +35,78 @@ document.getElementById("24").addEventListener("mouseover", twentyfour);
 
 // Click events
 document.getElementById("1").addEventListener("click", oneC);
+document.getElementById("2").addEventListener("click", twoC);
+document.getElementById("3").addEventListener("click", threeC);
+document.getElementById("4").addEventListener("click", fourC);
+document.getElementById("5").addEventListener("click", fiveC);
+document.getElementById("6").addEventListener("click", sixC);
+document.getElementById("7").addEventListener("click", sevenC);
+document.getElementById("8").addEventListener("click", eightC);
+document.getElementById("9").addEventListener("click", nineC);
+document.getElementById("10").addEventListener("click", tenC);
+document.getElementById("11").addEventListener("click", elevenC);
+document.getElementById("12").addEventListener("click", twelveC);
+document.getElementById("13").addEventListener("click", thirteenC);
+document.getElementById("14").addEventListener("click", fourteenC);
+document.getElementById("15").addEventListener("click", fifteenC);
+document.getElementById("16").addEventListener("click", sixteenC);
+document.getElementById("17").addEventListener("click", seventeenC);
+document.getElementById("18").addEventListener("click", eighteenC);
+document.getElementById("19").addEventListener("click", nineteenC);
+document.getElementById("20").addEventListener("click", twentyC);
+document.getElementById("21").addEventListener("click", twentyoneC);
+document.getElementById("22").addEventListener("click", twentytwoC);
+document.getElementById("23").addEventListener("click", twentythreeC);
+document.getElementById("24").addEventListener("click", twentyfourC);
 
 // Hover functions
-function one() {
-    document.getElementById("info").innerHTML = "Nokuy";
-}
-function two() {
-    document.getElementById("info").innerHTML = "Tsewhtron";
-}
-function three() {
-    document.getElementById("info").innerHTML = "Tuvanun";
-}
-function four() {
-    document.getElementById("info").innerHTML = "Adanac Ruof";
-}
-function five() {
-    document.getElementById("info").innerHTML = "Airotciv";
-}
-function six() {
-    document.getElementById("info").innerHTML = "Sknab";
-}
-function seven() {
-    document.getElementById("info").innerHTML = "Adanac Neves";
-}
-function eight() {
-    document.getElementById("info").innerHTML = "Niffab";
-}
-function nine() {
-    document.getElementById("info").innerHTML = "Trela";
-}
-function ten() {
-    document.getElementById("info").innerHTML = "Etuloser";
-}
-function eleven() {
-    document.getElementById("info").innerHTML = "Eremselle";
-}
-function twelve() {
-    document.getElementById("info").innerHTML = "Aibmuloc Hsitirb";
-}
-function thirteen() {
-    document.getElementById("info").innerHTML = "Atrebla";
-}
-function fourteen() {
-    document.getElementById("info").innerHTML = "Nawehctaksas";
-}
-function fifteen() {
-    document.getElementById("info").innerHTML = "Abotinam";
-}
-function sixteen() {
-    document.getElementById("info").innerHTML = "Oiratno";
-}
-function seventeen() {
-    document.getElementById("info").innerHTML = "Cebeuq";
-}
-function eighteen() {
-    document.getElementById("info").innerHTML = "Sllaf Llihcruhc";
-}
-function nineteen() {
-    document.getElementById("info").innerHTML = "Snhojts";
-}
-function twenty() {
-    document.getElementById("info").innerHTML = "Kciwsnurb";
-}
-function twentyone() {
-    document.getElementById("info").innerHTML = "I.E.P.";
-}
-function twentytwo() {
-    document.getElementById("info").innerHTML = "Aitocs Avon";
-}
-function twentythree() {
-    document.getElementById("info").innerHTML = "Adanac Eerht Ytnewt";
-}
-function twentyfour() {
-    document.getElementById("info").innerHTML = "Adanac Ruof Ytnewt";
-}
+function one() {info("Nokuy");}
+function two() {info("Tsewhtron");}
+function three() {info("Tuvanun");}
+function four() {info("Adanac Ruof");}
+function five() {info("Airotciv");}
+function six() {info("Sknab");}
+function seven() {info("Adanac Neves");}
+function eight() {info("Niffab");}
+function nine() {info("Trela");}
+function ten() {info("Etuloser");}
+function eleven() {info("Eremselle");}
+function twelve() {info("Aibmuloc Hsitirb");}
+function thirteen() {info("Atrebla");}
+function fourteen() {info("Nawehctaksas");}
+function fifteen() {info("Abotinam");}
+function sixteen() {info("Oiratno");}
+function seventeen() {info("Cebeuq");}
+function eighteen() {info("Sllaf Llihcruhc");}
+function nineteen() {info("Snhojts");}
+function twenty() {info("Kciwsnurb");}
+function twentyone() {info("I.E.P.");}
+function twentytwo() {info("Aitocs Avon");}
+function twentythree() {info("Adanac Eerht Ytnewt");}
+function twentyfour() {info("Adanac Ruof Ytnewt");}
 
 // Click functions
-function oneC() {
-    rightside("Click");
-}
+function oneC() {rightside("Click");}
+function twoC() {info("Tsewhtron");}
+function threeC() {info("Tuvanun");}
+function fourC() {info("Adanac Ruof");}
+function fiveC() {info("Airotciv");}
+function sixC() {info("Sknab");}
+function sevenC() {info("Adanac Neves");}
+function eightC() {info("Niffab");}
+function nineC() {info("Trela");}
+function tenC() {info("Etuloser");}
+function elevenC() {info("Eremselle");}
+function twelveC() {info("Aibmuloc Hsitirb");}
+function thirteenC() {info("Atrebla");}
+function fourteenC() {info("Nawehctaksas");}
+function fifteenC() {info("Abotinam");}
+function sixteenC() {info("Oiratno");}
+function seventeenC() {info("Cebeuq");}
+function eighteenC() {info("Sllaf Llihcruhc");}
+function nineteenC() {info("Snhojts");}
+function twentyC() {info("Kciwsnurb");}
+function twentyoneC() {info("I.E.P.");}
+function twentytwoC() {info("Aitocs Avon");}
+function twentythreeC() {info("Adanac Eerht Ytnewt");}
+function twentyfourC() {info("Adanac Ruof Ytnewt");}
