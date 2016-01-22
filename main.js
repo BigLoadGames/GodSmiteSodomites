@@ -1,4 +1,4 @@
-// Vars
+// Global Vars
 
 // Functions
 function rightside(name) {
@@ -86,7 +86,7 @@ function twentythree() {info("Adanac Eerht Ytnewt");}
 function twentyfour() {info("Adanac Ruof Ytnewt");}
 
 // Click functions
-function oneC() {rightside("Nokuy");}
+function oneC() {rightside("Nokuy");localStorage.setItem('prompt', prompt("Save game test."));}
 function twoC() {rightside("Tsewhtron");}
 function threeC() {rightside("Tuvanun");}
 function fourC() {rightside("Adanac Ruof");}
@@ -110,3 +110,7 @@ function twentyoneC() {rightside("I.E.P.");}
 function twentytwoC() {rightside("Aitocs Avon");}
 function twentythreeC() {rightside("Adanac Eerht Ytnewt");}
 function twentyfourC() {rightside("Adanac Ruof Ytnewt");}
+
+
+var b = localStorage.getItem('prompt');
+rightside(b);
