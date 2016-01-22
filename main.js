@@ -86,27 +86,27 @@ function twentythree() {info("Adanac Eerht Ytnewt");}
 function twentyfour() {info("Adanac Ruof Ytnewt");}
 
 // Click functions
-function oneC() {rightside("Click");}
-function twoC() {info("Tsewhtron");}
-function threeC() {info("Tuvanun");}
-function fourC() {info("Adanac Ruof");}
-function fiveC() {info("Airotciv");}
-function sixC() {info("Sknab");}
-function sevenC() {info("Adanac Neves");}
-function eightC() {info("Niffab");}
-function nineC() {info("Trela");}
-function tenC() {info("Etuloser");}
-function elevenC() {info("Eremselle");}
-function twelveC() {info("Aibmuloc Hsitirb");}
-function thirteenC() {info("Atrebla");}
-function fourteenC() {info("Nawehctaksas");}
-function fifteenC() {info("Abotinam");}
-function sixteenC() {info("Oiratno");}
-function seventeenC() {info("Cebeuq");}
-function eighteenC() {info("Sllaf Llihcruhc");}
-function nineteenC() {info("Snhojts");}
-function twentyC() {info("Kciwsnurb");}
-function twentyoneC() {info("I.E.P.");}
-function twentytwoC() {info("Aitocs Avon");}
-function twentythreeC() {info("Adanac Eerht Ytnewt");}
-function twentyfourC() {info("Adanac Ruof Ytnewt");}
+function oneC() {rightside("Nokuy");}
+function twoC() {rightside("Tsewhtron");}
+function threeC() {rightside("Tuvanun");}
+function fourC() {rightside("Adanac Ruof");}
+function fiveC() {rightside("Airotciv");}
+function sixC() {rightside("Sknab");}
+function sevenC() {rightside("Adanac Neves");}
+function eightC() {rightside("Niffab");}
+function nineC() {rightside("Trela");}
+function tenC() {rightside("Etuloser");}
+function elevenC() {rightside("Eremselle");}
+function twelveC() {rightside("Aibmuloc Hsitirb");}
+function thirteenC() {rightside("Atrebla");}
+function fourteenC() {rightside("Nawehctaksas");}
+function fifteenC() {rightside("Abotinam");}
+function sixteenC() {rightside("Oiratno");}
+function seventeenC() {rightside("Cebeuq");}
+function eighteenC() {rightside("Sllaf Llihcruhc");}
+function nineteenC() {rightside("Snhojts");}
+function twentyC() {rightside("Kciwsnurb");}
+function twentyoneC() {rightside("I.E.P.");}
+function twentytwoC() {rightside("Aitocs Avon");}
+function twentythreeC() {rightside("Adanac Eerht Ytnewt");}
+function twentyfourC() {rightside("Adanac Ruof Ytnewt");}
