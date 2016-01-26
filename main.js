@@ -22,7 +22,7 @@ function info(name) {
   document.getElementById("info").innerHTML = name;
 }
 // Let's make a save/load function, which, of course, will only become functional later.
-document.getElementById("leftside").innerHTML = ("<button onclick=\"save()\">Save</button></br><button onclick=\"load()\">Load</button>");
+document.getElementById("leftside").innerHTML = ("<p class=\"button\" onclick=\"save()\">Save</button><p class=\"button\" onclick=\"load()\">Load</button>");
 function save() {
   localStorage.setItem(one, JSON.stringify(one));localStorage.setItem(two, JSON.stringify(two));
   localStorage.setItem(three, JSON.stringify(three));localStorage.setItem(four, JSON.stringify(four));
@@ -36,6 +36,12 @@ function save() {
   localStorage.setItem(nineteen, JSON.stringify(nineteen));localStorage.setItem(twenty, JSON.stringify(twenty));
   localStorage.setItem(twentyOne, JSON.stringify(twentyOne));localStorage.setItem(twentyTwo, JSON.stringify(twentyTwo));
   localStorage.setItem(twentyThree, JSON.stringify(twentyThree));localStorage.setItem(twentyFour, JSON.stringify(twentyFour));
+  swal({
+    title: "Saved",
+    text: "This will close automatically.",
+    timer: 1000,
+    showConfirmButton: false
+  });
 }
 function load() {
   one = JSON.parse(localStorage.getItem(one));two = JSON.parse(localStorage.getItem(two));
@@ -50,6 +56,12 @@ function load() {
   nineteen = JSON.parse(localStorage.getItem(nineteen));twenty = JSON.parse(localStorage.getItem(twenty));
   twentyOne = JSON.parse(localStorage.getItem(twentyOne));twentyTwo = JSON.parse(localStorage.getItem(twentyTwo));
   twentyThree = JSON.parse(localStorage.getItem(twentyThree));twentyFour = JSON.parse(localStorage.getItem(twentyFour));
+  swal({
+    title: "Loaded",
+    text: "This will close automatically.",
+    timer: 1000,
+    showConfirmButton: false
+  });
 }
 
 /* Hover events */

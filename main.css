@@ -1,8 +1,20 @@
 body {
 	background-color:#272727;
+	font-family: monospace;
 }
 p {
 	color:white;
+}
+a, a:active, a:hover, a:visited {
+	color: white;
+	text-decoration: none;
+}
+p.button {
+	text-align: center;
+	font-weight: bold;
+	border-style: solid;
+	border-width: 2px;
+	border-radius: 3px;
 }
 .map {
 	margin:auto;
