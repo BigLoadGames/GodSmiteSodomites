@@ -1,20 +1,12 @@
 /* Things to not forgot, that I will forget if I don't write down.
 
-localStorage.setItem()
+localStorage.setItem(")
 localStorage.getItem()
 JSON.stringify()
 JSON.parse()
 */
 
 /* Global Vars */
-localStorage.removeItem("one");localStorage.removeItem("two");localStorage.removeItem("three");
-localStorage.removeItem("four");localStorage.removeItem(five);localStorage.removeItem(six);
-localStorage.removeItem("seven");localStorage.removeItem("eight");localStorage.removeItem("nine");
-localStorage.removeItem("ten");localStorage.removeItem("eleven");localStorage.removeItem("twelve");
-localStorage.removeItem("thirteen");localStorage.removeItem("fourteen");localStorage.removeItem("fifteen");
-localStorage.removeItem("sixteen");localStorage.removeItem("seventeen");localStorage.removeItem("eighteen");
-localStorage.removeItem("nineteen");localStorage.removeItem("twenty");localStorage.removeItem("twentyOne");
-localStorage.removeItem("twentyTwo");localStorage.removeItem("twentyThree");localStorage.removeItem("twentyFour");
 var one = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
 var two = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
 var three = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
@@ -42,9 +34,6 @@ var twentyFour = {population:5000, followers:0, influence:0.00, blasphemists:0, 
 var money = 500;
 
 /* Functions */
-function areaGen(number) {
-  (number) = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-}
 function rightside(name) {
   document.getElementById("rightside").innerHTML = name;
 }
@@ -54,18 +43,26 @@ function info(name) {
 // Let's make a save/load function, which, of course, will only become functional later.
 document.getElementById("leftside").innerHTML = ("<p class=\"button\" onclick=\"save()\">Save</button><p class=\"button\" onclick=\"load()\">Load</button>");
 function save() {
-  localStorage.setItem("one", JSON.stringify(one));localStorage.setItem(two, JSON.stringify(two));
-  localStorage.setItem(three, JSON.stringify(three));localStorage.setItem(four, JSON.stringify(four));
-  localStorage.setItem(five, JSON.stringify(five));localStorage.setItem(six, JSON.stringify(six));
-  localStorage.setItem(seven, JSON.stringify(seven));localStorage.setItem(eight, JSON.stringify(eight));
-  localStorage.setItem(nine, JSON.stringify(nine));localStorage.setItem(ten, JSON.stringify(ten));
-  localStorage.setItem(eleven, JSON.stringify(eleven));localStorage.setItem(twelve, JSON.stringify(twelve));
-  localStorage.setItem(thirteen, JSON.stringify(thirteen));localStorage.setItem(fourteen, JSON.stringify(fourteen));
-  localStorage.setItem(fifteen, JSON.stringify(fifteen));localStorage.setItem(sixteen, JSON.stringify(sixteen));
-  localStorage.setItem(seventeen, JSON.stringify(seventeen));localStorage.setItem(eighteen, JSON.stringify(eighteen));
-  localStorage.setItem(nineteen, JSON.stringify(nineteen));localStorage.setItem(twenty, JSON.stringify(twenty));
-  localStorage.setItem(twentyOne, JSON.stringify(twentyOne));localStorage.setItem(twentyTwo, JSON.stringify(twentyTwo));
-  localStorage.setItem(twentyThree, JSON.stringify(twentyThree));localStorage.setItem(twentyFour, JSON.stringify(twentyFour));
+  localStorage.removeItem("one");localStorage.removeItem("two");localStorage.removeItem("three");
+  localStorage.removeItem("four");localStorage.removeItem("five");localStorage.removeItem("six");
+  localStorage.removeItem("seven");localStorage.removeItem("eight");localStorage.removeItem("nine");
+  localStorage.removeItem("ten");localStorage.removeItem("eleven");localStorage.removeItem("twelve");
+  localStorage.removeItem("thirteen");localStorage.removeItem("fourteen");localStorage.removeItem("fifteen");
+  localStorage.removeItem("sixteen");localStorage.removeItem("seventeen");localStorage.removeItem("eighteen");
+  localStorage.removeItem("nineteen");localStorage.removeItem("twenty");localStorage.removeItem("twentyOne");
+  localStorage.removeItem("twentyTwo");localStorage.removeItem("twentyThree");localStorage.removeItem("twentyFour");
+  localStorage.setItem("one", JSON.stringify(one));localStorage.setItem("two", JSON.stringify(two));
+  localStorage.setItem("three", JSON.stringify(three));localStorage.setItem("four", JSON.stringify(four));
+  localStorage.setItem("five", JSON.stringify(five));localStorage.setItem("six", JSON.stringify(six));
+  localStorage.setItem("seven", JSON.stringify(seven));localStorage.setItem("eight", JSON.stringify(eight));
+  localStorage.setItem("nine", JSON.stringify(nine));localStorage.setItem("ten", JSON.stringify(ten));
+  localStorage.setItem("eleven", JSON.stringify(eleven));localStorage.setItem("twelve", JSON.stringify(twelve));
+  localStorage.setItem("thirteen", JSON.stringify(thirteen));localStorage.setItem("fourteen", JSON.stringify(fourteen));
+  localStorage.setItem("fifteen", JSON.stringify(fifteen));localStorage.setItem("sixteen", JSON.stringify(sixteen));
+  localStorage.setItem("seventeen", JSON.stringify(seventeen));localStorage.setItem("eighteen", JSON.stringify(eighteen));
+  localStorage.setItem("nineteen", JSON.stringify(nineteen));localStorage.setItem("twenty", JSON.stringify(twenty));
+  localStorage.setItem("twentyOne", JSON.stringify(twentyOne));localStorage.setItem("twentyTwo", JSON.stringify(twentyTwo));
+  localStorage.setItem("twentyThree", JSON.stringify(twentyThree));localStorage.setItem("twentyFour", JSON.stringify(twentyFour));
   swal({
     title: "Saved",
     text: "This will close automatically.",
@@ -74,25 +71,24 @@ function save() {
   });
 }
 function load() {
-  one = JSON.parse(localStorage.getItem("one"));two = JSON.parse(localStorage.getItem(two));
-  three = JSON.parse(localStorage.getItem(three));four = JSON.parse(localStorage.getItem(four));
-  five = JSON.parse(localStorage.getItem(five));six = JSON.parse(localStorage.getItem(six));
-  seven = JSON.parse(localStorage.getItem(seven));eight = JSON.parse(localStorage.getItem(eight));
-  nine = JSON.parse(localStorage.getItem(nine));ten = JSON.parse(localStorage.getItem(ten));
-  eleven = JSON.parse(localStorage.getItem(eleven));twelve = JSON.parse(localStorage.getItem(twelve));
-  thirteen = JSON.parse(localStorage.getItem(thirteen));fourteen = JSON.parse(localStorage.getItem(fourteen));
-  fifteen = JSON.parse(localStorage.getItem(fifteen));sixteen = JSON.parse(localStorage.getItem(sixteen));
-  seventeen = JSON.parse(localStorage.getItem(seventeen));eighteen = JSON.parse(localStorage.getItem(eighteen));
-  nineteen = JSON.parse(localStorage.getItem(nineteen));twenty = JSON.parse(localStorage.getItem(twenty));
-  twentyOne = JSON.parse(localStorage.getItem(twentyOne));twentyTwo = JSON.parse(localStorage.getItem(twentyTwo));
-  twentyThree = JSON.parse(localStorage.getItem(twentyThree));twentyFour = JSON.parse(localStorage.getItem(twentyFour));
+  one = JSON.parse(localStorage.getItem("one"));two = JSON.parse(localStorage.getItem("two"));
+  three = JSON.parse(localStorage.getItem("three"));four = JSON.parse(localStorage.getItem("four"));
+  five = JSON.parse(localStorage.getItem("five"));six = JSON.parse(localStorage.getItem("six"));
+  seven = JSON.parse(localStorage.getItem("seven"));eight = JSON.parse(localStorage.getItem("eight"));
+  nine = JSON.parse(localStorage.getItem("nine"));ten = JSON.parse(localStorage.getItem("ten"));
+  eleven = JSON.parse(localStorage.getItem("eleven"));twelve = JSON.parse(localStorage.getItem("twelve"));
+  thirteen = JSON.parse(localStorage.getItem("thirteen"));fourteen = JSON.parse(localStorage.getItem("fourteen"));
+  fifteen = JSON.parse(localStorage.getItem("fifteen"));sixteen = JSON.parse(localStorage.getItem("sixteen"));
+  seventeen = JSON.parse(localStorage.getItem("seventeen"));eighteen = JSON.parse(localStorage.getItem("eighteen"));
+  nineteen = JSON.parse(localStorage.getItem("nineteen"));twenty = JSON.parse(localStorage.getItem("twenty"));
+  twentyOne = JSON.parse(localStorage.getItem("twentyOne"));twentyTwo = JSON.parse(localStorage.getItem("twentyTwo"));
+  twentyThree = JSON.parse(localStorage.getItem("twentyThree"));twentyFour = JSON.parse(localStorage.getItem("twentyFour"));
   swal({
     title: "Loaded",
     text: "This will close automatically.",
     timer: 1000,
     showConfirmButton: false
   });
-  alert(one.population);
 }
 
 /* Hover events */
