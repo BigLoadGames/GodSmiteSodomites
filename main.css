@@ -1,3 +1,4 @@
+@import url("https://u.pomf.is/wpcubr.css");
 body {
 	background-color:#272727;
 	font-family: monospace;
@@ -39,4 +40,10 @@ p.button {
 .leftside {
 	float:left;
 	width:18%;
+}
+.sweet-alert {
+  background-color: #272727;
+}
+.sweet-alert h2, .sweet-alert p {
+	color: white;
 }
