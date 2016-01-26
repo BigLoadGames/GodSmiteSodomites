@@ -7,14 +7,44 @@ JSON.parse()
 */
 
 /* Global Vars */
-var one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve;
-var thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty;
-var twentyOne, twentyTwo, twentyThree, twentyFour;
-one = two = three = four = five = six = seven = eight = nine = ten = eleven = twelve = {population:5000, followers:0, influence:0};
-thirteen = fourteen = fifteen = sixteen = seventeen = eighteen = nineteen = twenty = {population:10000, followers:0, influence:0};
-twentyOne = twentyTwo = twentyThree = twentyFour = {population:15000, followers:0, influence:0};
+localStorage.removeItem("one");localStorage.removeItem("two");localStorage.removeItem("three");
+localStorage.removeItem("four");localStorage.removeItem(five);localStorage.removeItem(six);
+localStorage.removeItem("seven");localStorage.removeItem("eight");localStorage.removeItem("nine");
+localStorage.removeItem("ten");localStorage.removeItem("eleven");localStorage.removeItem("twelve");
+localStorage.removeItem("thirteen");localStorage.removeItem("fourteen");localStorage.removeItem("fifteen");
+localStorage.removeItem("sixteen");localStorage.removeItem("seventeen");localStorage.removeItem("eighteen");
+localStorage.removeItem("nineteen");localStorage.removeItem("twenty");localStorage.removeItem("twentyOne");
+localStorage.removeItem("twentyTwo");localStorage.removeItem("twentyThree");localStorage.removeItem("twentyFour");
+var one = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var two = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var three = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var four = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var five = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var six = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var seven = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var eight = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var nine = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var ten = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var eleven = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var twelve = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var thirteen = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var fourteen = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var fifteen = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var sixteen = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var seventeen = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var eighteen = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var nineteen = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var twenty = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var twentyOne = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var twentyTwo = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var twentyThree = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var twentyFour = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var money = 500;
 
 /* Functions */
+function areaGen(number) {
+  (number) = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+}
 function rightside(name) {
   document.getElementById("rightside").innerHTML = name;
 }
@@ -24,7 +54,7 @@ function info(name) {
 // Let's make a save/load function, which, of course, will only become functional later.
 document.getElementById("leftside").innerHTML = ("<p class=\"button\" onclick=\"save()\">Save</button><p class=\"button\" onclick=\"load()\">Load</button>");
 function save() {
-  localStorage.setItem(one, JSON.stringify(one));localStorage.setItem(two, JSON.stringify(two));
+  localStorage.setItem("one", JSON.stringify(one));localStorage.setItem(two, JSON.stringify(two));
   localStorage.setItem(three, JSON.stringify(three));localStorage.setItem(four, JSON.stringify(four));
   localStorage.setItem(five, JSON.stringify(five));localStorage.setItem(six, JSON.stringify(six));
   localStorage.setItem(seven, JSON.stringify(seven));localStorage.setItem(eight, JSON.stringify(eight));
@@ -44,7 +74,7 @@ function save() {
   });
 }
 function load() {
-  one = JSON.parse(localStorage.getItem(one));two = JSON.parse(localStorage.getItem(two));
+  one = JSON.parse(localStorage.getItem("one"));two = JSON.parse(localStorage.getItem(two));
   three = JSON.parse(localStorage.getItem(three));four = JSON.parse(localStorage.getItem(four));
   five = JSON.parse(localStorage.getItem(five));six = JSON.parse(localStorage.getItem(six));
   seven = JSON.parse(localStorage.getItem(seven));eight = JSON.parse(localStorage.getItem(eight));
@@ -62,6 +92,7 @@ function load() {
     timer: 1000,
     showConfirmButton: false
   });
+  alert(one.population);
 }
 
 /* Hover events */
