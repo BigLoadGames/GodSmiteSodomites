@@ -40,8 +40,11 @@ function rightside(name) {
 function info(name) {
   document.getElementById("info").innerHTML = name;
 }
+function leftside(name) {
+  document.getElementById("leftside").innerHTML = name;
+}
+leftside(("<p class=\"button\" onclick=\"save()\">Save</button><p class=\"button\" onclick=\"load()\">Load</button>"));
 // Let's make a save/load function, which, of course, will only become functional later.
-document.getElementById("leftside").innerHTML = ("<p class=\"button\" onclick=\"save()\">Save</button><p class=\"button\" onclick=\"load()\">Load</button>");
 function save() {
   localStorage.removeItem("one");localStorage.removeItem("two");localStorage.removeItem("three");
   localStorage.removeItem("four");localStorage.removeItem("five");localStorage.removeItem("six");
