@@ -7,33 +7,48 @@ JSON.parse()
 */
 
 /* Global Vars */
-var one = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var two = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var three = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var four = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var five = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var six = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var seven = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var eight = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var nine = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var ten = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var eleven = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var twelve = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var thirteen = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var fourteen = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var fifteen = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var sixteen = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var seventeen = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var eighteen = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var nineteen = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var twenty = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var twentyOne = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var twentyTwo = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var twentyThree = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
-var twentyFour = {population:5000, followers:0, influence:0.00, blasphemists:0, competition:0.00};
+var one = {name:"Nokuy", population:5000, followers:0, blasphemists:0};
+var two = {name:"Tsewhtron", population:5000, followers:0, blasphemists:0};
+var three = {name:"Tuvanun", population:5000, followers:0, blasphemists:0};
+var four = {name:"Adanac Ruof", population:5000, followers:0, blasphemists:0};
+var five = {name:"Airotciv", population:5000, followers:0, blasphemists:0};
+var six = {name:"Sknab", population:5000, followers:0, blasphemists:0};
+var seven = {name:"Adanac Neves", population:5000, followers:0, blasphemists:0};
+var eight = {name:"Niffab", population:5000, followers:0, blasphemists:0};
+var nine = {name:"Trela", population:5000, followers:0, blasphemists:0};
+var ten = {name:"Etuloser", population:5000, followers:0, blasphemists:0};
+var eleven = {name:"Eremselle", population:5000, followers:0, blasphemists:0};
+var twelve = {name:"Aibmuloc Hsitirb", population:5000, followers:0, blasphemists:0};
+var thirteen = {name:"Atrebla", population:5000, followers:0, blasphemists:0};
+var fourteen = {name:"Nawehctaksas", population:5000, followers:0, blasphemists:0};
+var fifteen = {name:"Abotinam", population:5000, followers:0, blasphemists:0};
+var sixteen = {name:"Oiratno", population:5000, followers:0, blasphemists:0};
+var seventeen = {name:"Cebeuq", population:5000, followers:0, blasphemists:0};
+var eighteen = {name:"Sllaf Llihcruhc", population:5000, followers:0, blasphemists:0};
+var nineteen = {name:"Snhojts", population:5000, followers:0, blasphemists:0};
+var twenty = {name:"Kciwsnurb", population:5000, followers:0, blasphemists:0};
+var twentyOne = {name:"I.E.P.", population:5000, followers:0, blasphemists:0};
+var twentyTwo = {name:"Aitocs Avon", population:5000, followers:0, blasphemists:0};
+var twentyThree = {name:"Adanac Eerht Ytnewt", population:5000, followers:0, blasphemists:0};
+var twentyFour = {name:"Adanac Ruof Ytnewt", population:5000, followers:0, blasphemists:0};
 var money = 500;
 
 /* Functions */
+function influence(name) {
+  return (name).followers/(name).population;
+}
+function competition(name) {
+  return (name).blasphemists/(name).population;
+}
+function percent(name) {
+  return "Influence: " + influence(name)*100 + "%" + "</br>" + "Competition: " + competition(name)*100 + "%";
+}
+function rename(name) {
+  return (name).name = prompt("Rename city?");
+}
+function rightMenu(name) {
+  rightside((name).name);
+}
 function rightside(name) {
   document.getElementById("rightside").innerHTML = name;
 }
@@ -147,53 +162,53 @@ document.getElementById("23").addEventListener("click", AdanacEerhtYtnewtC);
 document.getElementById("24").addEventListener("click", AdanacRuofYtnewtC);
 
 /* Hover functions */
-function Nokuy() {info("Nokuy");}
-function Tsewhtron() {info("Tsewhtron");}
-function Tuvanun() {info("Tuvanun");}
-function AdanacRuof() {info("Adanac Ruof");}
-function Airotciv() {info("Airotciv");}
-function Sknab() {info("Sknab");}
-function AdanacNeves() {info("Adanac Neves");}
-function Niffab() {info("Niffab");}
-function Trela() {info("Trela");}
-function Etuloser() {info("Etuloser");}
-function Eremselle() {info("Eremselle");}
-function AibmulocHsitirb() {info("Aibmuloc Hsitirb");}
-function Atrebla() {info("Atrebla");}
-function Nawehctaksas() {info("Nawehctaksas");}
-function Abotinam() {info("Abotinam");}
-function Oiratno() {info("Oiratno");}
-function Cebeuq() {info("Cebeuq");}
-function SllafLlihcruhc() {info("Sllaf Llihcruhc");}
-function Snhojts() {info("Snhojts");}
-function Kciwsnurb() {info("Kciwsnurb");}
-function Iep() {info("I.E.P.");}
-function AitocsAvon() {info("Aitocs Avon");}
-function AdanacEerhtYtnewt() {info("Adanac Eerht Ytnewt");}
-function AdanacRuofYtnewt() {info("Adanac Ruof Ytnewt");}
+function Nokuy() {info(one.name);}
+function Tsewhtron() {info(two.name);}
+function Tuvanun() {info(three.name);}
+function AdanacRuof() {info(four.name);}
+function Airotciv() {info(five.name);}
+function Sknab() {info(six.name);}
+function AdanacNeves() {info(seven.name);}
+function Niffab() {info(eight.name);}
+function Trela() {info(nine.name);}
+function Etuloser() {info(ten.name);}
+function Eremselle() {info(eleven.name);}
+function AibmulocHsitirb() {info(twelve.name);}
+function Atrebla() {info(thirteen.name);}
+function Nawehctaksas() {info(fourteen.name);}
+function Abotinam() {info(fifteen.name);}
+function Oiratno() {info(sixteen.name);}
+function Cebeuq() {info(seventeen.name);}
+function SllafLlihcruhc() {info(eighteen.name);}
+function Snhojts() {info(nienteen.name);}
+function Kciwsnurb() {info(twenty.name);}
+function Iep() {info(twentyOne.name);}
+function AitocsAvon() {info(twentyTwo.name);}
+function AdanacEerhtYtnewt() {info(twentyThree.name);}
+function AdanacRuofYtnewt() {info(twentyfour.name);}
 
 /* Click functions */
-function NokuyC() {rightside("Nokuy");}
-function TsewhtronC() {rightside("Tsewhtron");}
-function TuvanunC() {rightside("Tuvanun");}
-function AdanacRuofC() {rightside("Adanac Ruof");}
-function AirotcivC() {rightside("Airotciv");}
-function SknabC() {rightside("Sknab");}
-function AdanacNevesC() {rightside("Adanac Neves");}
-function NiffabC() {rightside("Niffab");}
-function TrelaC() {rightside("Trela");}
-function EtuloserC() {rightside("Etuloser");}
-function EremselleC() {rightside("Eremselle");}
-function AibmulocHsitirbC() {rightside("Aibmuloc Hsitirb");}
-function AtreblaC() {rightside("Atrebla");}
-function NawehctaksasC() {rightside("Nawehctaksas");}
-function AbotinamC() {rightside("Abotinam");}
-function OiratnoC() {rightside("Oiratno");}
-function CebeuqC() {rightside("Cebeuq");}
-function SllafLlihcruhcC() {rightside("Sllaf Llihcruhc");}
-function SnhojtsC() {rightside("Snhojts");}
-function KciwsnurbC() {rightside("Kciwsnurb");}
-function IepC() {rightside("I.E.P.");}
-function AitocsAvonC() {rightside("Aitocs Avon");}
-function AdanacEerhtYtnewtC() {rightside("Adanac Eerht Ytnewt");}
-function AdanacRuofYtnewtC() {rightside("Adanac Ruof Ytnewt");}
+function NokuyC() {rightside(one.name + "</br></br>" + percent(one) + "</br><p class=\"button\" onclick=\"rename(one)\">Rename City</button>");}
+function TsewhtronC() {rightside(two.name + "</br></br>" + percent(two));}
+function TuvanunC() {rightside(three.name + "</br></br>" + percent(three));}
+function AdanacRuofC() {rightside(four.name + "</br></br>" + percent(four));}
+function AirotcivC() {rightside(five.name + "</br></br>" + percent(five));}
+function SknabC() {rightside(six.name + "</br></br>" + percent(six));}
+function AdanacNevesC() {rightside(seven.name + "</br></br>" + percent(seven));}
+function NiffabC() {rightside(eight.name + "</br></br>" + percent(eight));}
+function TrelaC() {rightside(nine.name + "</br></br>" + percent(nine));}
+function EtuloserC() {rightside(ten.name + "</br></br>" + percent(ten));}
+function EremselleC() {rightside(eleven.name + "</br></br>" + percent(eleven));}
+function AibmulocHsitirbC() {rightside(twelve.name + "</br></br>" + percent(twelve));}
+function AtreblaC() {rightside(thirteen.name + "</br></br>" + percent(thirteen));}
+function NawehctaksasC() {rightside(fourteen.name + "</br></br>" + percent(fourteen));}
+function AbotinamC() {rightside(fifteen.name + "</br></br>" + percent(fifteen));}
+function OiratnoC() {rightside(sixteen.name + "</br></br>" + percent(sixteen));}
+function CebeuqC() {rightside(seventeen.name + "</br></br>" + percent(seventeen));}
+function SllafLlihcruhcC() {rightside(eighteen.name + "</br></br>" + percent(eighteen));}
+function SnhojtsC() {rightside(nineteen.name + "</br></br>" + percent(nineteen));}
+function KciwsnurbC() {rightside(twenty.name + "</br></br>" + percent(twenty));}
+function IepC() {rightside(twentyOne.name + "</br></br>" + percent(twentyOne));}
+function AitocsAvonC() {rightside(twentyTwo.name + "</br></br>" + percent(twentyTwo));}
+function AdanacEerhtYtnewtC() {rightside(twentyThree.name + "</br></br>" + percent(twentyThree));}
+function AdanacRuofYtnewtC() {rightside(twentyFour.name + "</br></br>" + percent(twentyFour));}
