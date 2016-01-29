@@ -32,6 +32,8 @@ var twentyTwo = {name:"Aitocs Avon", population:5000, followers:0, blasphemists:
 var twentyThree = {name:"Adanac Eerht Ytnewt", population:5000, followers:0, blasphemists:0};
 var twentyFour = {name:"Adanac Ruof Ytnewt", population:5000, followers:0, blasphemists:0};
 var money = 500;
+var compMoney = 500;
+var turn = 0;
 
 /* Functions */
 function influence(name) {
@@ -45,6 +47,12 @@ function percent(name) {
 }
 function rename(name) {
   return (name).name = prompt("Rename city?");
+}
+function userMoneyPerTurn(name) {
+  return money = money * (Math.pow((1 + (influence(name))), turn));
+}
+function userMoney() {
+  return (userMoneyPerTurn(one))+(userMoneyPerTurn(two))-(money);
 }
 function rightMenu(name) {
   rightSide((name).name + "</br></br>" + percent(name) + "</br><p class=\"button\" id=\"rename\">Rename City</p>");
