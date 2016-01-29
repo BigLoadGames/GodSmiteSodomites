@@ -47,18 +47,19 @@ function rename(name) {
   return (name).name = prompt("Rename city?");
 }
 function rightMenu(name) {
-  rightside((name).name);
+  rightSide((name).name + "</br></br>" + percent(name) + "</br><p class=\"button\" id=\"rename\">Rename City</p>");
+  document.getElementById("rename").onclick = function() {rename(name);rightMenu(name);};
 }
-function rightside(name) {
-  document.getElementById("rightside").innerHTML = name;
+function rightSide(name) {
+  document.getElementById("rightSide").innerHTML = name;
 }
 function info(name) {
   document.getElementById("info").innerHTML = name;
 }
-function leftside(name) {
-  document.getElementById("leftside").innerHTML = name;
+function leftSide(name) {
+  document.getElementById("leftSide").innerHTML = name;
 }
-leftside(("<p class=\"button\" onclick=\"save()\">Save</button><p class=\"button\" onclick=\"load()\">Load</button>"));
+leftSide(("<p class=\"button\" onclick=\"save()\">Save</button><p class=\"button\" onclick=\"load()\">Load</button>"));
 // Let's make a save/load function, which, of course, will only become functional later.
 function save() {
   localStorage.removeItem("one");localStorage.removeItem("two");localStorage.removeItem("three");
@@ -185,30 +186,30 @@ function Kciwsnurb() {info(twenty.name);}
 function Iep() {info(twentyOne.name);}
 function AitocsAvon() {info(twentyTwo.name);}
 function AdanacEerhtYtnewt() {info(twentyThree.name);}
-function AdanacRuofYtnewt() {info(twentyfour.name);}
+function AdanacRuofYtnewt() {info(twentyFour.name);}
 
 /* Click functions */
-function NokuyC() {rightside(one.name + "</br></br>" + percent(one) + "</br><p class=\"button\" onclick=\"rename(one)\">Rename City</button>");}
-function TsewhtronC() {rightside(two.name + "</br></br>" + percent(two));}
-function TuvanunC() {rightside(three.name + "</br></br>" + percent(three));}
-function AdanacRuofC() {rightside(four.name + "</br></br>" + percent(four));}
-function AirotcivC() {rightside(five.name + "</br></br>" + percent(five));}
-function SknabC() {rightside(six.name + "</br></br>" + percent(six));}
-function AdanacNevesC() {rightside(seven.name + "</br></br>" + percent(seven));}
-function NiffabC() {rightside(eight.name + "</br></br>" + percent(eight));}
-function TrelaC() {rightside(nine.name + "</br></br>" + percent(nine));}
-function EtuloserC() {rightside(ten.name + "</br></br>" + percent(ten));}
-function EremselleC() {rightside(eleven.name + "</br></br>" + percent(eleven));}
-function AibmulocHsitirbC() {rightside(twelve.name + "</br></br>" + percent(twelve));}
-function AtreblaC() {rightside(thirteen.name + "</br></br>" + percent(thirteen));}
-function NawehctaksasC() {rightside(fourteen.name + "</br></br>" + percent(fourteen));}
-function AbotinamC() {rightside(fifteen.name + "</br></br>" + percent(fifteen));}
-function OiratnoC() {rightside(sixteen.name + "</br></br>" + percent(sixteen));}
-function CebeuqC() {rightside(seventeen.name + "</br></br>" + percent(seventeen));}
-function SllafLlihcruhcC() {rightside(eighteen.name + "</br></br>" + percent(eighteen));}
-function SnhojtsC() {rightside(nineteen.name + "</br></br>" + percent(nineteen));}
-function KciwsnurbC() {rightside(twenty.name + "</br></br>" + percent(twenty));}
-function IepC() {rightside(twentyOne.name + "</br></br>" + percent(twentyOne));}
-function AitocsAvonC() {rightside(twentyTwo.name + "</br></br>" + percent(twentyTwo));}
-function AdanacEerhtYtnewtC() {rightside(twentyThree.name + "</br></br>" + percent(twentyThree));}
-function AdanacRuofYtnewtC() {rightside(twentyFour.name + "</br></br>" + percent(twentyFour));}
+function NokuyC() {rightMenu(one);}
+function TsewhtronC() {rightMenu(two);}
+function TuvanunC() {rightMenu(three);}
+function AdanacRuofC() {rightMenu(four);}
+function AirotcivC() {rightMenu(five);}
+function SknabC() {rightMenu(six);}
+function AdanacNevesC() {rightMenu(seven);}
+function NiffabC() {rightMenu(eight);}
+function TrelaC() {rightMenu(nine);}
+function EtuloserC() {rightMenu(ten);}
+function EremselleC() {rightMenu(eleven);}
+function AibmulocHsitirbC() {rightMenu(twelve);}
+function AtreblaC() {rightMenu(thirteen);}
+function NawehctaksasC() {rightMenu(fourteen);}
+function AbotinamC() {rightMenu(fifteen);}
+function OiratnoC() {rightMenu(sixteen);}
+function CebeuqC() {rightMenu(seventeen);}
+function SllafLlihcruhcC() {rightMenu(eighteen);}
+function SnhojtsC() {rightMenu(nineteen);}
+function KciwsnurbC() {rightMenu(twenty);}
+function IepC() {rightMenu(twentyOne);}
+function AitocsAvonC() {rightMenu(twentyTwo);}
+function AdanacEerhtYtnewtC() {rightMenu(twentyThree);}
+function AdanacRuofYtnewtC() {rightMenu(twentyFour);}
