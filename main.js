@@ -33,7 +33,9 @@ var twentyThree = {name:"Adanac Eerht Ytnewt", population:5000, followers:0, bla
 var twentyFour = {name:"Adanac Ruof Ytnewt", population:5000, followers:0, blasphemists:0};
 var money = 500;
 var compMoney = 500;
-var turn = 0;
+
+/* Load events */
+leftMenu();
 
 /* Functions */
 function influence(name) {
@@ -48,15 +50,29 @@ function percent(name) {
 function rename(name) {
   return (name).name = prompt("Rename city?");
 }
-function userMoneyPerTurn(name) {
-  return money = money * (Math.pow((1 + (influence(name))), turn));
+function round(value, decimals) {
+    return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
-function userMoney() {
-  return (userMoneyPerTurn(one))+(userMoneyPerTurn(two))-(money);
+function userMPA(name) {
+  return money = money * (Math.pow((1 + (influence(name))), 2));
+}
+function userMPT() {
+  return money = userMPA(one) + userMPA(two) + userMPA(three) + userMPA(four) + userMPA(five) + userMPA(six) + userMPA(seven) + userMPA(eight)
+   + userMPA(nine) + userMPA(ten) + userMPA(eleven) + userMPA(twelve) + userMPA(thirteen) + userMPA(fourteen) + userMPA(fifteen) + userMPA(sixteen)
+    + userMPA(seventeen) + userMPA(eighteen) + userMPA(nineteen) + userMPA(twenty) + userMPA(twentyOne) + userMPA(twentyTwo) + userMPA(twentyThree) + userMPA(twentyFour) - (money*23);
 }
 function rightMenu(name) {
-  rightSide((name).name + "</br></br>" + percent(name) + "</br><p class=\"button\" id=\"rename\">Rename City</p>");
+  rightSide((name).name + "</br></br>" + percent(name) + "</br>God particles: " + round(money, 0) + "</br><p class=\"button\" id=\"rename\">Rename City</p>");
   document.getElementById("rename").onclick = function() {rename(name);rightMenu(name);};
+}
+function leftMenu() {
+  leftSide("<p class=\"button\" onclick=\"options()\">Options</p><p class=\"button\" onclick=\"nextTurn()\">Next Turn</p>");
+}
+function options() {
+  leftSide("<p class=\"button\" onclick=\"save()\">Save</p><p class=\"button\" onclick=\"load()\">Load</p><p class=\"button\" onclick=\"leftMenu()\">Return</p>");
+}
+function nextTurn() {
+  userMPT();
 }
 function rightSide(name) {
   document.getElementById("rightSide").innerHTML = name;
@@ -67,7 +83,6 @@ function info(name) {
 function leftSide(name) {
   document.getElementById("leftSide").innerHTML = name;
 }
-leftSide(("<p class=\"button\" onclick=\"save()\">Save</button><p class=\"button\" onclick=\"load()\">Load</button>"));
 // Let's make a save/load function, which, of course, will only become functional later.
 function save() {
   localStorage.removeItem("one");localStorage.removeItem("two");localStorage.removeItem("three");
@@ -90,6 +105,7 @@ function save() {
   localStorage.setItem("nineteen", JSON.stringify(nineteen));localStorage.setItem("twenty", JSON.stringify(twenty));
   localStorage.setItem("twentyOne", JSON.stringify(twentyOne));localStorage.setItem("twentyTwo", JSON.stringify(twentyTwo));
   localStorage.setItem("twentyThree", JSON.stringify(twentyThree));localStorage.setItem("twentyFour", JSON.stringify(twentyFour));
+  localStorage.setItem("money", JSON.stringify(money));localStorage.setItem("compMoney", JSON.stringify(compMoney));
   swal({
     title: "Saved",
     text: "This will close automatically.",
@@ -110,6 +126,7 @@ function load() {
   nineteen = JSON.parse(localStorage.getItem("nineteen"));twenty = JSON.parse(localStorage.getItem("twenty"));
   twentyOne = JSON.parse(localStorage.getItem("twentyOne"));twentyTwo = JSON.parse(localStorage.getItem("twentyTwo"));
   twentyThree = JSON.parse(localStorage.getItem("twentyThree"));twentyFour = JSON.parse(localStorage.getItem("twentyFour"));
+  money = JSON.parse(localStorage.getItem("money"));compMoney = JSON.parse(localStorage.getItem("compMoney"));
   swal({
     title: "Loaded",
     text: "This will close automatically.",
@@ -189,7 +206,7 @@ function Abotinam() {info(fifteen.name);}
 function Oiratno() {info(sixteen.name);}
 function Cebeuq() {info(seventeen.name);}
 function SllafLlihcruhc() {info(eighteen.name);}
-function Snhojts() {info(nienteen.name);}
+function Snhojts() {info(nineteen.name);}
 function Kciwsnurb() {info(twenty.name);}
 function Iep() {info(twentyOne.name);}
 function AitocsAvon() {info(twentyTwo.name);}
