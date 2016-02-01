@@ -59,11 +59,58 @@ function userMPA(name) {
 function userMPT() {
   return money = userMPA(one) + userMPA(two) + userMPA(three) + userMPA(four) + userMPA(five) + userMPA(six) + userMPA(seven) + userMPA(eight)
    + userMPA(nine) + userMPA(ten) + userMPA(eleven) + userMPA(twelve) + userMPA(thirteen) + userMPA(fourteen) + userMPA(fifteen) + userMPA(sixteen)
-    + userMPA(seventeen) + userMPA(eighteen) + userMPA(nineteen) + userMPA(twenty) + userMPA(twentyOne) + userMPA(twentyTwo) + userMPA(twentyThree) + userMPA(twentyFour) - (money*23);
+    + userMPA(seventeen) + userMPA(eighteen) + userMPA(nineteen) + userMPA(twenty) + userMPA(twentyOne) + userMPA(twentyTwo) + userMPA(twentyThree) + userMPA(twentyFour) + 20 - (money*23);
+}
+function compMPA(name) {
+  return compMoney = compMoney * (Math.pow((1 + (competition(name))), 2));
+}
+function compMPT() {
+  return compMoney = compMPA(one) + compMPA(two) + compMPA(three) + compMPA(four) + compMPA(five) + compMPA(six) + compMPA(seven) + compMPA(eight)
+   + compMPA(nine) + compMPA(ten) + compMPA(eleven) + compMPA(twelve) + compMPA(thirteen) + compMPA(fourteen) + compMPA(fifteen) + compMPA(sixteen)
+    + compMPA(seventeen) + compMPA(eighteen) + compMPA(nineteen) + compMPA(twenty) + compMPA(twentyOne) + compMPA(twentyTwo) + compMPA(twentyThree) + compMPA(twentyFour) + 20 - (compMoney*23);
+}
+function buyMenu(name, item) {
+  if (money>=50 && item == 1) {
+    (name).followers = (name).followers + 1;
+    money = money - 50;
+  }
+  else if (money>=100 && item == 2) {
+    (name).followers = (name).followers + 3;
+    money = money - 100;
+  }
+  else if (money>=200 && item == 3) {
+    (name).followers = (name).followers + 5;
+    money = money - 200;
+  }
+  else if (money>=450 && item == 4) {
+    (name).followers = (name).followers + 10;
+    money = money - 450;
+  }
+  else if (money>=950 && item == 5) {
+    (name).followers = (name).followers + 20;
+    money = money - 950;
+  }
+  else if (money>=2450 && item == 6) {
+    (name).followers = (name).followers + 50;
+    money = money - 2450;
+  }
 }
 function rightMenu(name) {
-  rightSide((name).name + "</br></br>" + percent(name) + "</br>God particles: " + round(money, 0) + "</br><p class=\"button\" id=\"rename\">Rename City</p>");
+  rightSide((name).name + "</br></br>" + percent(name) + "</br>God particles: " + round(money, 0)
+  + "<p class=\"button\" id=\"buy1\">Give an infant an odd dream (50)</p>"
+  + "<p class=\"button\" id=\"buy2\">Possess a crow (100)</p>"
+  + "<p class=\"button\" id=\"buy3\">Whisper to a toddler (200)</p>"
+  + "<p class=\"button\" id=\"buy4\">Levitate a dog (450)</p>"
+  + "<p class=\"button\" id=\"buy5\">Create a crazy person (950)</p>"
+  + "<p class=\"button\" id=\"buy6\">Write a cult page and spread on social media (2450)</p>"
+  + "<p class=\"button\" id=\"rename\">Rename City</p>");
   document.getElementById("rename").onclick = function() {rename(name);rightMenu(name);};
+  document.getElementById("buy1").onclick = function() {buyMenu(name, 1);rightMenu(name);};
+  document.getElementById("buy2").onclick = function() {buyMenu(name, 2);rightMenu(name);};
+  document.getElementById("buy3").onclick = function() {buyMenu(name, 3);rightMenu(name);};
+  document.getElementById("buy4").onclick = function() {buyMenu(name, 4);rightMenu(name);};
+  document.getElementById("buy5").onclick = function() {buyMenu(name, 5);rightMenu(name);};
+  document.getElementById("buy6").onclick = function() {buyMenu(name, 6);rightMenu(name);};
 }
 function leftMenu() {
   leftSide("<p class=\"button\" onclick=\"options()\">Options</p><p class=\"button\" onclick=\"nextTurn()\">Next Turn</p>");
@@ -73,6 +120,7 @@ function options() {
 }
 function nextTurn() {
   userMPT();
+  compMPT();
 }
 function rightSide(name) {
   document.getElementById("rightSide").innerHTML = name;
