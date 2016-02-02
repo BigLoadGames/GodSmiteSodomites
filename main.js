@@ -54,7 +54,7 @@ function round(value, decimals) {
     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
 function userMPA(name) {
-  return money = money * (Math.pow((1 + (influence(name))), 2));
+  return money = money + (20*influence(name)*100);
 }
 function userMPT() {
   return money = userMPA(one) + userMPA(two) + userMPA(three) + userMPA(four) + userMPA(five) + userMPA(six) + userMPA(seven) + userMPA(eight)
@@ -127,6 +127,9 @@ function rightSide(name) {
 }
 function info(name) {
   document.getElementById("info").innerHTML = (name).name + "</br><p class=\"stats\" style=\"color:lightgreen;\">" + (name).followers + "</p>" + "<p class=\"stats\">/" + (name).population + "/</p>" + "<p class=\"stats\" style=\"color:salmon;\">" + (name).blasphemists;
+  if ((name).followers>(name).population) {
+    (name).followers = (name).population;
+  }
 }
 function leftSide(name) {
   document.getElementById("leftSide").innerHTML = name;
