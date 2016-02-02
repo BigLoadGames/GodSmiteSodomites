@@ -126,7 +126,7 @@ function rightSide(name) {
   document.getElementById("rightSide").innerHTML = name;
 }
 function info(name) {
-  document.getElementById("info").innerHTML = name;
+  document.getElementById("info").innerHTML = (name).name + "</br><p class=\"stats\" style=\"color:lightgreen;\">" + (name).followers + "</p>" + "<p class=\"stats\">/" + (name).population + "/</p>" + "<p class=\"stats\" style=\"color:salmon;\">" + (name).blasphemists;
 }
 function leftSide(name) {
   document.getElementById("leftSide").innerHTML = name;
@@ -236,30 +236,30 @@ document.getElementById("23").addEventListener("click", AdanacEerhtYtnewtC);
 document.getElementById("24").addEventListener("click", AdanacRuofYtnewtC);
 
 /* Hover functions */
-function Nokuy() {info(one.name);}
-function Tsewhtron() {info(two.name);}
-function Tuvanun() {info(three.name);}
-function AdanacRuof() {info(four.name);}
-function Airotciv() {info(five.name);}
-function Sknab() {info(six.name);}
-function AdanacNeves() {info(seven.name);}
-function Niffab() {info(eight.name);}
-function Trela() {info(nine.name);}
-function Etuloser() {info(ten.name);}
-function Eremselle() {info(eleven.name);}
-function AibmulocHsitirb() {info(twelve.name);}
-function Atrebla() {info(thirteen.name);}
-function Nawehctaksas() {info(fourteen.name);}
-function Abotinam() {info(fifteen.name);}
-function Oiratno() {info(sixteen.name);}
-function Cebeuq() {info(seventeen.name);}
-function SllafLlihcruhc() {info(eighteen.name);}
-function Snhojts() {info(nineteen.name);}
-function Kciwsnurb() {info(twenty.name);}
-function Iep() {info(twentyOne.name);}
-function AitocsAvon() {info(twentyTwo.name);}
-function AdanacEerhtYtnewt() {info(twentyThree.name);}
-function AdanacRuofYtnewt() {info(twentyFour.name);}
+function Nokuy() {info(one);}
+function Tsewhtron() {info(two);}
+function Tuvanun() {info(three);}
+function AdanacRuof() {info(four);}
+function Airotciv() {info(five);}
+function Sknab() {info(six);}
+function AdanacNeves() {info(seven);}
+function Niffab() {info(eight);}
+function Trela() {info(nine);}
+function Etuloser() {info(ten);}
+function Eremselle() {info(eleven);}
+function AibmulocHsitirb() {info(twelve);}
+function Atrebla() {info(thirteen);}
+function Nawehctaksas() {info(fourteen);}
+function Abotinam() {info(fifteen);}
+function Oiratno() {info(sixteen);}
+function Cebeuq() {info(seventeen);}
+function SllafLlihcruhc() {info(eighteen);}
+function Snhojts() {info(nineteen);}
+function Kciwsnurb() {info(twenty);}
+function Iep() {info(twentyOne);}
+function AitocsAvon() {info(twentyTwo);}
+function AdanacEerhtYtnewt() {info(twentyThree);}
+function AdanacRuofYtnewt() {info(twentyFour);}
 
 /* Click functions */
 function NokuyC() {rightMenu(one);}
