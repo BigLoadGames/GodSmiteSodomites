@@ -6,6 +6,9 @@ body {
 p {
 	color:white;
 }
+p.stats {
+	display:inline;
+}
 a, a:active, a:hover, a:visited {
 	color: white;
 	text-decoration: none;
