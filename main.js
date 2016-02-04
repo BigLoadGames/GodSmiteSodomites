@@ -33,6 +33,10 @@ var twentyThree = {name:"Adanac Eerht Ytnewt", population:5000, followers:0, bla
 var twentyFour = {name:"Adanac Ruof Ytnewt", population:5000, followers:0, blasphemists:0};
 var money = 500;
 var compMoney = 500;
+var zero = 0;
+var number = [zero, one, two, three, four, five, six, seven, eight, nine, ten, eleven,
+twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty,
+twentyOne, twentyTwo, twentyThree];
 
 /* Load events */
 leftMenu();
@@ -45,7 +49,7 @@ function competition(name) {
   return (name).blasphemists/(name).population;
 }
 function percent(name) {
-  return "Influence: " + influence(name)*100 + "%" + "</br>" + "Competition: " + competition(name)*100 + "%";
+  return "Influence: " + round(influence(name)*100, 2) + "%" + "</br>" + "Competition: " + round(competition(name)*100, 2) + "%";
 }
 function rename(name) {
   return (name).name = prompt("Rename city?");
@@ -59,7 +63,7 @@ function userMPA(name) {
 function userMPT() {
   return money = userMPA(one) + userMPA(two) + userMPA(three) + userMPA(four) + userMPA(five) + userMPA(six) + userMPA(seven) + userMPA(eight)
    + userMPA(nine) + userMPA(ten) + userMPA(eleven) + userMPA(twelve) + userMPA(thirteen) + userMPA(fourteen) + userMPA(fifteen) + userMPA(sixteen)
-    + userMPA(seventeen) + userMPA(eighteen) + userMPA(nineteen) + userMPA(twenty) + userMPA(twentyOne) + userMPA(twentyTwo) + userMPA(twentyThree) + userMPA(twentyFour) + 20 - (money*23);
+   + userMPA(seventeen) + userMPA(eighteen) + userMPA(nineteen) + userMPA(twenty) + userMPA(twentyOne) + userMPA(twentyTwo) + userMPA(twentyThree) + userMPA(twentyFour) + 20 - (money*23);
 }
 function compMPA(name) {
   return compMoney = compMoney * (Math.pow((1 + (competition(name))), 2));
@@ -67,33 +71,90 @@ function compMPA(name) {
 function compMPT() {
   return compMoney = compMPA(one) + compMPA(two) + compMPA(three) + compMPA(four) + compMPA(five) + compMPA(six) + compMPA(seven) + compMPA(eight)
    + compMPA(nine) + compMPA(ten) + compMPA(eleven) + compMPA(twelve) + compMPA(thirteen) + compMPA(fourteen) + compMPA(fifteen) + compMPA(sixteen)
-    + compMPA(seventeen) + compMPA(eighteen) + compMPA(nineteen) + compMPA(twenty) + compMPA(twentyOne) + compMPA(twentyTwo) + compMPA(twentyThree) + compMPA(twentyFour) + 20 - (compMoney*23);
+   + compMPA(seventeen) + compMPA(eighteen) + compMPA(nineteen) + compMPA(twenty) + compMPA(twentyOne) + compMPA(twentyTwo) + compMPA(twentyThree) + compMPA(twentyFour) + 20 - (compMoney*23);
 }
 function buyMenu(name, item) {
-  if (money>=50 && item == 1) {
-    (name).followers = (name).followers + 1;
-    money = money - 50;
+  if (influence(name)<1) {
+    if (money>=50 && item == 1) {
+      (name).followers = (name).followers + 1;
+      money = money - 50;
+    }
+    else if (money>=100 && item == 2) {
+      (name).followers = (name).followers + 3;
+      money = money - 100;
+    }
+    else if (money>=200 && item == 3) {
+      (name).followers = (name).followers + 5;
+      money = money - 200;
+    }
+    else if (money>=450 && item == 4) {
+      (name).followers = (name).followers + 10;
+      money = money - 450;
+    }
+    else if (money>=950 && item == 5) {
+      (name).followers = (name).followers + 20;
+      money = money - 950;
+    }
+    else if (money>=2450 && item == 6) {
+      (name).followers = (name).followers + 50;
+      money = money - 2450;
+    }
+    else if (money>=12450 && item == 7) {
+      (name).followers = (name).followers + 250;
+      money = money - 12450;
+    }
+    else if (money>=12450 && item == 8) {
+      (name).followers = (name).followers + 1000;
+      money = money - 49950;
+    }
   }
-  else if (money>=100 && item == 2) {
-    (name).followers = (name).followers + 3;
-    money = money - 100;
+  else {
+    return;
   }
-  else if (money>=200 && item == 3) {
-    (name).followers = (name).followers + 5;
-    money = money - 200;
+}
+function botBuyMenu(name) {
+  if (competition(name)<1) {
+    if (compMoney>=12450) {
+      (name).blasphemists = (name).blasphemists + 1000;
+      compMoney = compMoney - 49950;
+    }
+    else if (compMoney>=12450) {
+      (name).blasphemists = (name).blasphemists + 250;
+      compMoney = compMoney - 12450;
+    }
+    else if (compMoney>=2450) {
+      (name).blasphemists = (name).blasphemists + 50;
+      compMoney = compMoney - 2450;
+    }
+    else if (compMoney>=950) {
+      (name).blasphemists = (name).blasphemists + 20;
+      compMoney = compMoney - 950;
+    }
+    else if (compMoney>=450) {
+      (name).blasphemists = (name).blasphemists + 10;
+      compMoney = compMoney - 450;
+    }
+    else if (compMoney>=200) {
+      (name).blasphemists = (name).blasphemists + 5;
+      compMoney = compMoney - 200;
+    }
+    else if (compMoney>=100) {
+      (name).blasphemists = (name).blasphemists + 3;
+      compMoney = compMoney - 100;
+    }
+    else if (compMoney>=50) {
+      (name).blasphemists = (name).blasphemists + 1;
+      compMoney = compMoney - 50;
+    }
   }
-  else if (money>=450 && item == 4) {
-    (name).followers = (name).followers + 10;
-    money = money - 450;
+  else {
+    return;
   }
-  else if (money>=950 && item == 5) {
-    (name).followers = (name).followers + 20;
-    money = money - 950;
-  }
-  else if (money>=2450 && item == 6) {
-    (name).followers = (name).followers + 50;
-    money = money - 2450;
-  }
+}
+function bot() {
+  compMPT();
+  var x = Math.floor((Math.random() * 24) + 1);
+  botBuyMenu(number[x]);
 }
 function rightMenu(name) {
   rightSide((name).name + "</br></br>" + percent(name) + "</br>God particles: " + round(money, 0)
@@ -101,8 +162,10 @@ function rightMenu(name) {
   + "<p class=\"button\" id=\"buy2\">Possess a crow (100)</p>"
   + "<p class=\"button\" id=\"buy3\">Whisper to a toddler (200)</p>"
   + "<p class=\"button\" id=\"buy4\">Levitate a dog (450)</p>"
-  + "<p class=\"button\" id=\"buy5\">Create a crazy person (950)</p>"
+  + "<p class=\"button\" id=\"buy5\">Convince a schizoid of your existence (950)</p>"
   + "<p class=\"button\" id=\"buy6\">Write a cult page and spread on social media (2450)</p>"
+  + "<p class=\"button\" id=\"buy7\">Virgin birth (12450)</p>"
+  + "<p class=\"button\" id=\"buy8\">Create a messiah (49950)</p>"
   + "<p class=\"button\" id=\"rename\">Rename City</p>");
   document.getElementById("rename").onclick = function() {rename(name);rightMenu(name);};
   document.getElementById("buy1").onclick = function() {buyMenu(name, 1);rightMenu(name);};
@@ -111,6 +174,8 @@ function rightMenu(name) {
   document.getElementById("buy4").onclick = function() {buyMenu(name, 4);rightMenu(name);};
   document.getElementById("buy5").onclick = function() {buyMenu(name, 5);rightMenu(name);};
   document.getElementById("buy6").onclick = function() {buyMenu(name, 6);rightMenu(name);};
+  document.getElementById("buy7").onclick = function() {buyMenu(name, 7);rightMenu(name);};
+  document.getElementById("buy8").onclick = function() {buyMenu(name, 8);rightMenu(name);};
 }
 function leftMenu() {
   leftSide("<p class=\"button\" onclick=\"options()\">Options</p><p class=\"button\" onclick=\"nextTurn()\">Next Turn</p>");
@@ -120,7 +185,7 @@ function options() {
 }
 function nextTurn() {
   userMPT();
-  compMPT();
+  bot();
 }
 function rightSide(name) {
   document.getElementById("rightSide").innerHTML = name;
@@ -129,6 +194,9 @@ function info(name) {
   document.getElementById("info").innerHTML = (name).name + "</br><p class=\"stats\" style=\"color:lightgreen;\">" + (name).followers + "</p>" + "<p class=\"stats\">/" + (name).population + "/</p>" + "<p class=\"stats\" style=\"color:salmon;\">" + (name).blasphemists;
   if ((name).followers>(name).population) {
     (name).followers = (name).population;
+  }
+  else {
+    return;
   }
 }
 function leftSide(name) {
