@@ -36,7 +36,7 @@ var compMoney = 500;
 var zero = 0;
 var number = [zero, one, two, three, four, five, six, seven, eight, nine, ten, eleven,
 twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty,
-twentyOne, twentyTwo, twentyThree];
+twentyOne, twentyTwo, twentyThree, twentyFour];
 
 /* Load events */
 leftMenu();
@@ -66,15 +66,22 @@ function userMPT() {
    + userMPA(seventeen) + userMPA(eighteen) + userMPA(nineteen) + userMPA(twenty) + userMPA(twentyOne) + userMPA(twentyTwo) + userMPA(twentyThree) + userMPA(twentyFour) + 20 - (money*23);
 }
 function compMPA(name) {
-  return compMoney = compMoney * (Math.pow((1 + (competition(name))), 2));
+  return compMoney = compMoney + (20*competition(name)*100);
 }
 function compMPT() {
   return compMoney = compMPA(one) + compMPA(two) + compMPA(three) + compMPA(four) + compMPA(five) + compMPA(six) + compMPA(seven) + compMPA(eight)
    + compMPA(nine) + compMPA(ten) + compMPA(eleven) + compMPA(twelve) + compMPA(thirteen) + compMPA(fourteen) + compMPA(fifteen) + compMPA(sixteen)
    + compMPA(seventeen) + compMPA(eighteen) + compMPA(nineteen) + compMPA(twenty) + compMPA(twentyOne) + compMPA(twentyTwo) + compMPA(twentyThree) + compMPA(twentyFour) + 20 - (compMoney*23);
 }
+function populationIncrease() {
+  for (var i=1; i<=24; i++) {
+    (number[i]).population = (number[i]).population+10;
+    (number[i]).followers = (number[i]).followers + round((influence(number[i])*10), 0);
+    (number[i]).blasphemists = (number[i]).blasphemists + round((competition(number[i])*10), 0);
+  }
+}
 function buyMenu(name, item) {
-  if (influence(name)<1) {
+  if (competition(name)+influence(name)<1) {
     if (money>=50 && item == 1) {
       (name).followers = (name).followers + 1;
       money = money - 50;
@@ -113,7 +120,7 @@ function buyMenu(name, item) {
   }
 }
 function botBuyMenu(name) {
-  if (competition(name)<1) {
+  if (competition(name)+influence(name)<1) {
     if (compMoney>=12450) {
       (name).blasphemists = (name).blasphemists + 1000;
       compMoney = compMoney - 49950;
@@ -186,6 +193,7 @@ function options() {
 function nextTurn() {
   userMPT();
   bot();
+  populationIncrease();
 }
 function rightSide(name) {
   document.getElementById("rightSide").innerHTML = name;
