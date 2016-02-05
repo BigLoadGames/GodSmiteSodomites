@@ -7,32 +7,32 @@ JSON.parse()
 */
 
 /* Global Vars */
-var one = {name:"Nokuy", population:5000, followers:0, blasphemists:0};
-var two = {name:"Tsewhtron", population:5000, followers:0, blasphemists:0};
-var three = {name:"Tuvanun", population:5000, followers:0, blasphemists:0};
-var four = {name:"Adanac Ruof", population:5000, followers:0, blasphemists:0};
-var five = {name:"Airotciv", population:5000, followers:0, blasphemists:0};
-var six = {name:"Sknab", population:5000, followers:0, blasphemists:0};
-var seven = {name:"Adanac Neves", population:5000, followers:0, blasphemists:0};
-var eight = {name:"Niffab", population:5000, followers:0, blasphemists:0};
-var nine = {name:"Trela", population:5000, followers:0, blasphemists:0};
-var ten = {name:"Etuloser", population:5000, followers:0, blasphemists:0};
-var eleven = {name:"Eremselle", population:5000, followers:0, blasphemists:0};
-var twelve = {name:"Aibmuloc Hsitirb", population:5000, followers:0, blasphemists:0};
-var thirteen = {name:"Atrebla", population:5000, followers:0, blasphemists:0};
-var fourteen = {name:"Nawehctaksas", population:5000, followers:0, blasphemists:0};
-var fifteen = {name:"Abotinam", population:5000, followers:0, blasphemists:0};
-var sixteen = {name:"Oiratno", population:5000, followers:0, blasphemists:0};
-var seventeen = {name:"Cebeuq", population:5000, followers:0, blasphemists:0};
-var eighteen = {name:"Sllaf Llihcruhc", population:5000, followers:0, blasphemists:0};
-var nineteen = {name:"Snhojts", population:5000, followers:0, blasphemists:0};
-var twenty = {name:"Kciwsnurb", population:5000, followers:0, blasphemists:0};
-var twentyOne = {name:"I.E.P.", population:5000, followers:0, blasphemists:0};
-var twentyTwo = {name:"Aitocs Avon", population:5000, followers:0, blasphemists:0};
-var twentyThree = {name:"Adanac Eerht Ytnewt", population:5000, followers:0, blasphemists:0};
-var twentyFour = {name:"Adanac Ruof Ytnewt", population:5000, followers:0, blasphemists:0};
-var money = 50000;
-var botMoney = 50000;
+var one = {name:"Nokuy", population:5000, followers:0, blasphemists:0, missionaries:0};
+var two = {name:"Tsewhtron", population:5000, followers:0, blasphemists:0, missionaries:0};
+var three = {name:"Tuvanun", population:5000, followers:0, blasphemists:0, missionaries:0};
+var four = {name:"Adanac Ruof", population:5000, followers:0, blasphemists:0, missionaries:0};
+var five = {name:"Airotciv", population:5000, followers:0, blasphemists:0, missionaries:0};
+var six = {name:"Sknab", population:5000, followers:0, blasphemists:0, missionaries:0};
+var seven = {name:"Adanac Neves", population:5000, followers:0, blasphemists:0, missionaries:0};
+var eight = {name:"Niffab", population:5000, followers:0, blasphemists:0, missionaries:0};
+var nine = {name:"Trela", population:5000, followers:0, blasphemists:0, missionaries:0};
+var ten = {name:"Etuloser", population:5000, followers:0, blasphemists:0, missionaries:0};
+var eleven = {name:"Eremselle", population:5000, followers:0, blasphemists:0, missionaries:0};
+var twelve = {name:"Aibmuloc Hsitirb", population:5000, followers:0, blasphemists:0, missionaries:0};
+var thirteen = {name:"Atrebla", population:5000, followers:0, blasphemists:0, missionaries:0};
+var fourteen = {name:"Nawehctaksas", population:5000, followers:0, blasphemists:0, missionaries:0};
+var fifteen = {name:"Abotinam", population:5000, followers:0, blasphemists:0, missionaries:0};
+var sixteen = {name:"Oiratno", population:5000, followers:0, blasphemists:0, missionaries:0};
+var seventeen = {name:"Cebeuq", population:5000, followers:0, blasphemists:0, missionaries:0};
+var eighteen = {name:"Sllaf Llihcruhc", population:5000, followers:0, blasphemists:0, missionaries:0};
+var nineteen = {name:"Snhojts", population:5000, followers:0, blasphemists:0, missionaries:0};
+var twenty = {name:"Kciwsnurb", population:5000, followers:0, blasphemists:0, missionaries:0};
+var twentyOne = {name:"I.E.P.", population:5000, followers:0, blasphemists:0, missionaries:0};
+var twentyTwo = {name:"Aitocs Avon", population:5000, followers:0, blasphemists:0, missionaries:0};
+var twentyThree = {name:"Adanac Eerht Ytnewt", population:5000, followers:0, blasphemists:0, missionaries:0};
+var twentyFour = {name:"Adanac Ruof Ytnewt", population:5000, followers:0, blasphemists:0, missionaries:0};
+var money = 500;
+var botMoney = 500;
 var zero = 0;
 var number = [zero, one, two, three, four, five, six, seven, eight, nine, ten, eleven,
 twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty,
@@ -57,62 +57,68 @@ function rename(name) {
 function round(value, decimals) {
     return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
-function userMPA(name) {
-  return money = money + (20*influence(name)*100);
-}
 function userMPT() {
-  return money = userMPA(one) + userMPA(two) + userMPA(three) + userMPA(four) + userMPA(five) + userMPA(six) + userMPA(seven) + userMPA(eight)
-   + userMPA(nine) + userMPA(ten) + userMPA(eleven) + userMPA(twelve) + userMPA(thirteen) + userMPA(fourteen) + userMPA(fifteen) + userMPA(sixteen)
-   + userMPA(seventeen) + userMPA(eighteen) + userMPA(nineteen) + userMPA(twenty) + userMPA(twentyOne) + userMPA(twentyTwo) + userMPA(twentyThree) + userMPA(twentyFour) + 20 - (money*23);
+  for (var i=1; i<=24; i++) {
+    money += (20*influence(number[i])*100);
+  }
+  money+=20;
 }
-function compMPA(name) {
-  return botMoney = botMoney + (20*competition(name)*100);
-}
-function compMPT() {
-  return botMoney = compMPA(one) + compMPA(two) + compMPA(three) + compMPA(four) + compMPA(five) + compMPA(six) + compMPA(seven) + compMPA(eight)
-   + compMPA(nine) + compMPA(ten) + compMPA(eleven) + compMPA(twelve) + compMPA(thirteen) + compMPA(fourteen) + compMPA(fifteen) + compMPA(sixteen)
-   + compMPA(seventeen) + compMPA(eighteen) + compMPA(nineteen) + compMPA(twenty) + compMPA(twentyOne) + compMPA(twentyTwo) + compMPA(twentyThree) + compMPA(twentyFour) + 20 - (botMoney*23);
+function botMPT() {
+  for (var i=1; i<=24; i++) {
+    botMoney += (20*competition(number[i])*100);
+  }
+  botMoney+=20;
 }
 function populationIncrease() {
   for (var i=1; i<=24; i++) {
-    (number[i]).population = (number[i]).population+10;
-    (number[i]).followers = (number[i]).followers + round((influence(number[i])*10), 0);
-    (number[i]).blasphemists = (number[i]).blasphemists + round((competition(number[i])*10), 0);
+    (number[i]).population +=10;
+    (number[i]).followers += round((influence(number[i])*10), 0);
+    (number[i]).blasphemists += round((competition(number[i])*10), 0);
   }
 }
 function buyMenu(name, item) {
   if (competition(name)+influence(name)<1) {
     if (money>=50 && item == 1) {
-      (name).followers = (name).followers + 1;
-      money = money - 50;
+      (name).followers += 1;
+      money -= 50;
     }
     else if (money>=100 && item == 2) {
-      (name).followers = (name).followers + 3;
-      money = money - 100;
+      (name).followers += 3;
+      money -= 100;
     }
     else if (money>=200 && item == 3) {
-      (name).followers = (name).followers + 5;
-      money = money - 200;
+      (name).followers +=5;
+      money -= 200;
     }
     else if (money>=450 && item == 4) {
-      (name).followers = (name).followers + 10;
-      money = money - 450;
+      (name).followers += 10;
+      money -= 450;
     }
     else if (money>=950 && item == 5) {
-      (name).followers = (name).followers + 20;
-      money = money - 950;
+      (name).followers += 20;
+      money -= 950;
     }
     else if (money>=2450 && item == 6) {
-      (name).followers = (name).followers + 50;
-      money = money - 2450;
+      (name).followers += 50;
+      money -= 2450;
     }
     else if (money>=12450 && item == 7) {
-      (name).followers = (name).followers + 250;
-      money = money - 12450;
+      (name).followers += 250;
+      money -= 12450;
     }
     else if (money>=49950 && item == 8) {
-      (name).followers = (name).followers + 1000;
-      money = money - 49950;
+      (name).followers += 1000;
+      money -= 49950;
+    }
+    else if (money>=50000 && item == 9) {
+      (name).followers -= (0.1*(name).followers);
+      (name).followers = round((name).followers, 0);
+      (name).missionaries += (0.1*(name).followers);
+      (name).missionaries = round((name).missionaries, 0);
+      money -= 50000;
+    }
+    else if (item == 10) {
+      
     }
   }
   else {
@@ -122,36 +128,36 @@ function buyMenu(name, item) {
 function botBuyMenu(name) {
   if (competition(name)+influence(name)<1) {
     if (botMoney>=49950) {
-      (name).blasphemists = (name).blasphemists + 1000;
-      botMoney = botMoney - 49950;
+      (name).blasphemists += 1000;
+      botMoney -= 49950;
     }
     else if (botMoney>=12450) {
-      (name).blasphemists = (name).blasphemists + 250;
-      botMoney = botMoney - 12450;
+      (name).blasphemists += 250;
+      botMoney -= 12450;
     }
     else if (botMoney>=2450) {
-      (name).blasphemists = (name).blasphemists + 50;
-      botMoney = botMoney - 2450;
+      (name).blasphemists += 50;
+      botMoney -= 2450;
     }
     else if (botMoney>=950) {
-      (name).blasphemists = (name).blasphemists + 20;
-      botMoney = botMoney - 950;
+      (name).blasphemists += 20;
+      botMoney -= 950;
     }
     else if (botMoney>=450) {
-      (name).blasphemists = (name).blasphemists + 10;
-      botMoney = botMoney - 450;
+      (name).blasphemists += 10;
+      botMoney -= 450;
     }
     else if (botMoney>=200) {
-      (name).blasphemists = (name).blasphemists + 5;
-      botMoney = botMoney - 200;
+      (name).blasphemists += 5;
+      botMoney -= 200;
     }
     else if (botMoney>=100) {
-      (name).blasphemists = (name).blasphemists + 3;
-      botMoney = botMoney - 100;
+      (name).blasphemists += 3;
+      botMoney -= 100;
     }
     else if (botMoney>=50) {
-      (name).blasphemists = (name).blasphemists + 1;
-      botMoney = botMoney - 50;
+      (name).blasphemists += 1;
+      botMoney -= 50;
     }
     else {
       return;
@@ -162,12 +168,13 @@ function botBuyMenu(name) {
   }
 }
 function bot() {
-  compMPT();
+  botMPT();
   var x = Math.floor((Math.random() * 24) + 1);
   botBuyMenu(number[x]);
 }
 function rightMenu(name) {
-  rightSide((name).name + "</br></br>" + percent(name) + "</br>God particles: " + round(money, 0)
+  rightSide((name).name + "</br></br>" + percent(name) + "</br>Missionaries: " + (name).missionaries
+  + "</br>God particles: " + round(money, 0)
   + "<p class=\"button\" id=\"buy1\">Give an infant an odd dream (50)</p>"
   + "<p class=\"button\" id=\"buy2\">Possess a crow (100)</p>"
   + "<p class=\"button\" id=\"buy3\">Whisper to a toddler (200)</p>"
@@ -176,6 +183,7 @@ function rightMenu(name) {
   + "<p class=\"button\" id=\"buy6\">Write a cult page and spread on social media (2450)</p>"
   + "<p class=\"button\" id=\"buy7\">Virgin birth (12450)</p>"
   + "<p class=\"button\" id=\"buy8\">Create a messiah (49950)</p>"
+  + "<p class=\"button\" id=\"buy9\">Convert 10% of your followers to missionaries (50000)</p>"
   + "<p class=\"button\" id=\"rename\">Rename City</p>");
   document.getElementById("rename").onclick = function() {rename(name);rightMenu(name);};
   document.getElementById("buy1").onclick = function() {buyMenu(name, 1);rightMenu(name);};
@@ -186,6 +194,16 @@ function rightMenu(name) {
   document.getElementById("buy6").onclick = function() {buyMenu(name, 6);rightMenu(name);};
   document.getElementById("buy7").onclick = function() {buyMenu(name, 7);rightMenu(name);};
   document.getElementById("buy8").onclick = function() {buyMenu(name, 8);rightMenu(name);};
+  document.getElementById("buy9").onclick = function() {buyMenu(name, 9);rightMenu(name);};
+  if ((name).followers>(name).population) {
+    (name).followers = (name).population;
+  }
+  else if ((name).blasphmists>(name).population) {
+    (name).blasphmists = (name).population;
+  }
+  else {
+    return;
+  }
 }
 function leftMenu() {
   leftSide("<p class=\"button\" onclick=\"options()\">Options</p><p class=\"button\" onclick=\"nextTurn()\">Next Turn</p>");
@@ -203,12 +221,6 @@ function rightSide(name) {
 }
 function info(name) {
   document.getElementById("info").innerHTML = (name).name + "</br><p class=\"stats\" style=\"color:lightgreen;\">" + (name).followers + "</p>" + "<p class=\"stats\">/" + (name).population + "/</p>" + "<p class=\"stats\" style=\"color:salmon;\">" + (name).blasphemists;
-  if ((name).followers>(name).population) {
-    (name).followers = (name).population;
-  }
-  else {
-    return;
-  }
 }
 function leftSide(name) {
   document.getElementById("leftSide").innerHTML = name;
