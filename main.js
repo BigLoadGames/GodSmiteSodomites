@@ -31,8 +31,8 @@ var twentyOne = {name:"I.E.P.", population:5000, followers:0, blasphemists:0};
 var twentyTwo = {name:"Aitocs Avon", population:5000, followers:0, blasphemists:0};
 var twentyThree = {name:"Adanac Eerht Ytnewt", population:5000, followers:0, blasphemists:0};
 var twentyFour = {name:"Adanac Ruof Ytnewt", population:5000, followers:0, blasphemists:0};
-var money = 500;
-var compMoney = 500;
+var money = 50000;
+var botMoney = 50000;
 var zero = 0;
 var number = [zero, one, two, three, four, five, six, seven, eight, nine, ten, eleven,
 twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty,
@@ -66,12 +66,12 @@ function userMPT() {
    + userMPA(seventeen) + userMPA(eighteen) + userMPA(nineteen) + userMPA(twenty) + userMPA(twentyOne) + userMPA(twentyTwo) + userMPA(twentyThree) + userMPA(twentyFour) + 20 - (money*23);
 }
 function compMPA(name) {
-  return compMoney = compMoney + (20*competition(name)*100);
+  return botMoney = botMoney + (20*competition(name)*100);
 }
 function compMPT() {
-  return compMoney = compMPA(one) + compMPA(two) + compMPA(three) + compMPA(four) + compMPA(five) + compMPA(six) + compMPA(seven) + compMPA(eight)
+  return botMoney = compMPA(one) + compMPA(two) + compMPA(three) + compMPA(four) + compMPA(five) + compMPA(six) + compMPA(seven) + compMPA(eight)
    + compMPA(nine) + compMPA(ten) + compMPA(eleven) + compMPA(twelve) + compMPA(thirteen) + compMPA(fourteen) + compMPA(fifteen) + compMPA(sixteen)
-   + compMPA(seventeen) + compMPA(eighteen) + compMPA(nineteen) + compMPA(twenty) + compMPA(twentyOne) + compMPA(twentyTwo) + compMPA(twentyThree) + compMPA(twentyFour) + 20 - (compMoney*23);
+   + compMPA(seventeen) + compMPA(eighteen) + compMPA(nineteen) + compMPA(twenty) + compMPA(twentyOne) + compMPA(twentyTwo) + compMPA(twentyThree) + compMPA(twentyFour) + 20 - (botMoney*23);
 }
 function populationIncrease() {
   for (var i=1; i<=24; i++) {
@@ -110,7 +110,7 @@ function buyMenu(name, item) {
       (name).followers = (name).followers + 250;
       money = money - 12450;
     }
-    else if (money>=12450 && item == 8) {
+    else if (money>=49950 && item == 8) {
       (name).followers = (name).followers + 1000;
       money = money - 49950;
     }
@@ -121,37 +121,40 @@ function buyMenu(name, item) {
 }
 function botBuyMenu(name) {
   if (competition(name)+influence(name)<1) {
-    if (compMoney>=12450) {
+    if (botMoney>=49950) {
       (name).blasphemists = (name).blasphemists + 1000;
-      compMoney = compMoney - 49950;
+      botMoney = botMoney - 49950;
     }
-    else if (compMoney>=12450) {
+    else if (botMoney>=12450) {
       (name).blasphemists = (name).blasphemists + 250;
-      compMoney = compMoney - 12450;
+      botMoney = botMoney - 12450;
     }
-    else if (compMoney>=2450) {
+    else if (botMoney>=2450) {
       (name).blasphemists = (name).blasphemists + 50;
-      compMoney = compMoney - 2450;
+      botMoney = botMoney - 2450;
     }
-    else if (compMoney>=950) {
+    else if (botMoney>=950) {
       (name).blasphemists = (name).blasphemists + 20;
-      compMoney = compMoney - 950;
+      botMoney = botMoney - 950;
     }
-    else if (compMoney>=450) {
+    else if (botMoney>=450) {
       (name).blasphemists = (name).blasphemists + 10;
-      compMoney = compMoney - 450;
+      botMoney = botMoney - 450;
     }
-    else if (compMoney>=200) {
+    else if (botMoney>=200) {
       (name).blasphemists = (name).blasphemists + 5;
-      compMoney = compMoney - 200;
+      botMoney = botMoney - 200;
     }
-    else if (compMoney>=100) {
+    else if (botMoney>=100) {
       (name).blasphemists = (name).blasphemists + 3;
-      compMoney = compMoney - 100;
+      botMoney = botMoney - 100;
     }
-    else if (compMoney>=50) {
+    else if (botMoney>=50) {
       (name).blasphemists = (name).blasphemists + 1;
-      compMoney = compMoney - 50;
+      botMoney = botMoney - 50;
+    }
+    else {
+      return;
     }
   }
   else {
@@ -232,7 +235,7 @@ function save() {
   localStorage.setItem("nineteen", JSON.stringify(nineteen));localStorage.setItem("twenty", JSON.stringify(twenty));
   localStorage.setItem("twentyOne", JSON.stringify(twentyOne));localStorage.setItem("twentyTwo", JSON.stringify(twentyTwo));
   localStorage.setItem("twentyThree", JSON.stringify(twentyThree));localStorage.setItem("twentyFour", JSON.stringify(twentyFour));
-  localStorage.setItem("money", JSON.stringify(money));localStorage.setItem("compMoney", JSON.stringify(compMoney));
+  localStorage.setItem("money", JSON.stringify(money));localStorage.setItem("botMoney", JSON.stringify(botMoney));
   swal({
     title: "Saved",
     text: "This will close automatically.",
@@ -253,7 +256,7 @@ function load() {
   nineteen = JSON.parse(localStorage.getItem("nineteen"));twenty = JSON.parse(localStorage.getItem("twenty"));
   twentyOne = JSON.parse(localStorage.getItem("twentyOne"));twentyTwo = JSON.parse(localStorage.getItem("twentyTwo"));
   twentyThree = JSON.parse(localStorage.getItem("twentyThree"));twentyFour = JSON.parse(localStorage.getItem("twentyFour"));
-  money = JSON.parse(localStorage.getItem("money"));compMoney = JSON.parse(localStorage.getItem("compMoney"));
+  money = JSON.parse(localStorage.getItem("money"));botMoney = JSON.parse(localStorage.getItem("botMoney"));
   swal({
     title: "Loaded",
     text: "This will close automatically.",
