@@ -51,6 +51,20 @@ function competition(name) {
 function percent(name) {
   return "Influence: " + round(influence(name)*100, 2) + "%" + "</br>" + "Competition: " + round(competition(name)*100, 2) + "%";
 }
+function factor(num) {
+  var root = Math.sqrt(num),
+  result = arguments[1] || [],
+  x = 2;
+
+  if(num % x) {
+   x = 3;
+   while((num % x) && ((x = x + 2) < root)){}
+  }
+  x = (x <= root) ? x : num;
+  result.push(x);
+
+  return (x === num) ? result : factor(num/x, result) ;
+}
 function rename(name) {
   return (name).name = prompt("Rename city?");
 }
@@ -118,7 +132,7 @@ function buyMenu(name, item) {
       money -= 50000;
     }
     else if (item == 10) {
-      
+
     }
   }
   else {
