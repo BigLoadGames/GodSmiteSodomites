@@ -73,21 +73,21 @@ function round(value, decimals) {
 }
 function userMPT() {
   for (var i=1; i<=24; i++) {
-    money += (20*influence(number[i])*100);
+    money += (20*influence(num[i])*100);
   }
   money+=20;
 }
 function botMPT() {
   for (var i=1; i<=24; i++) {
-    botMoney += (20*competition(number[i])*100);
+    botMoney += (20*competition(num[i])*100);
   }
   botMoney+=20;
 }
 function populationIncrease() {
   for (var i=1; i<=24; i++) {
-    (number[i]).population +=10;
-    (number[i]).followers += round((influence(number[i])*10), 0);
-    (number[i]).blasphemists += round((competition(number[i])*10), 0);
+    (num[i]).population +=10;
+    (num[i]).followers += round((influence(num[i])*10), 0);
+    (num[i]).blasphemists += round((competition(num[i])*10), 0);
   }
 }
 function buyMenu(name, item) {
