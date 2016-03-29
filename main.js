@@ -34,7 +34,7 @@ var twentyFour = {name:"Adanac Ruof Ytnewt", population:5000, followers:0, blasp
 var money = 500;
 var botMoney = 500;
 var zero = 0;
-var number = [zero, one, two, three, four, five, six, seven, eight, nine, ten, eleven,
+var num = [zero, one, two, three, four, five, six, seven, eight, nine, ten, eleven,
 twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty,
 twentyOne, twentyTwo, twentyThree, twentyFour];
 
@@ -50,6 +50,20 @@ function competition(name) {
 }
 function percent(name) {
   return "Influence: " + round(influence(name)*100, 2) + "%" + "</br>" + "Competition: " + round(competition(name)*100, 2) + "%";
+}
+function factor(num) {
+  var root = Math.sqrt(num),
+  result = arguments[1] || [],
+  x = 2;
+
+  if(num % x) {
+   x = 3;
+   while((num % x) && ((x = x + 2) < root)){}
+  }
+  x = (x <= root) ? x : num;
+  result.push(x);
+
+  return (x === num) ? result : factor(num/x, result) ;
 }
 function rename(name) {
   return (name).name = prompt("Rename city?");
@@ -118,7 +132,7 @@ function buyMenu(name, item) {
       money -= 50000;
     }
     else if (item == 10) {
-      
+
     }
   }
   else {
@@ -170,7 +184,7 @@ function botBuyMenu(name) {
 function bot() {
   botMPT();
   var x = Math.floor((Math.random() * 24) + 1);
-  botBuyMenu(number[x]);
+  botBuyMenu(num[x]);
 }
 function rightMenu(name) {
   rightSide((name).name + "</br></br>" + percent(name) + "</br>Missionaries: " + (name).missionaries
