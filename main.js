@@ -34,7 +34,7 @@ var twentyFour = {name:"Adanac Ruof Ytnewt", population:5000, followers:0, blasp
 var money = 500;
 var botMoney = 500;
 var zero = 0;
-var number = [zero, one, two, three, four, five, six, seven, eight, nine, ten, eleven,
+var num = [zero, one, two, three, four, five, six, seven, eight, nine, ten, eleven,
 twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty,
 twentyOne, twentyTwo, twentyThree, twentyFour];
 
@@ -184,7 +184,7 @@ function botBuyMenu(name) {
 function bot() {
   botMPT();
   var x = Math.floor((Math.random() * 24) + 1);
-  botBuyMenu(number[x]);
+  botBuyMenu(num[x]);
 }
 function rightMenu(name) {
   rightSide((name).name + "</br></br>" + percent(name) + "</br>Missionaries: " + (name).missionaries
