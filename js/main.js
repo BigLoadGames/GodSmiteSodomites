@@ -34,6 +34,7 @@ var twentyFour = {name:"Adanac Ruof Ytnewt", population:5000, followers:0, blasp
 var money = 500;
 var botMoney = 500;
 var zero = 0;
+var currentCity = one;
 var num = [zero, one, two, three, four, five, six, seven, eight, nine, ten, eleven,
 twelve, thirteen, fourteen, fifteen, sixteen, seventeen, eighteen, nineteen, twenty,
 twentyOne, twentyTwo, twentyThree, twentyFour];
@@ -46,6 +47,7 @@ function rename(name) {
   return (name).name = prompt("Rename city?");
 }
 function rightMenu(name) {
+  currentCity = (name);
   rightSide((name).name + "</br></br>" + percent(name) + "</br>Missionaries: " + (name).missionaries
   + "</br>God particles: " + round(money, 0)
   + "<p class=\"button\" id=\"buy1\">Give an infant an odd dream (50)</p>"
