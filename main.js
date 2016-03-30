@@ -51,6 +51,23 @@ function competition(name) {
 function percent(name) {
   return "Influence: " + round(influence(name)*100, 2) + "%" + "</br>" + "Competition: " + round(competition(name)*100, 2) + "%";
 }
+function primeGen(x) {
+  var primes = [2,3];
+  var num = 5;
+  while (primes.length < x) {
+    var prime = true;
+    for (var i = 0; i < primes.length; i++) {
+      if (num % primes[i] == 0) {
+        prime = false;
+      }
+    }
+    if (prime == true) {
+      primes.push(num);
+    }
+    num++;
+  }
+  return primes[x-1];
+}
 function rename(name) {
   return (name).name = prompt("Rename city?");
 }
@@ -118,7 +135,7 @@ function buyMenu(name, item) {
       money -= 50000;
     }
     else if (item == 10) {
-      
+
     }
   }
   else {
