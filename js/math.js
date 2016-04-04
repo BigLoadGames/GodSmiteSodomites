@@ -41,7 +41,15 @@ function factor(num) {
   return (x === num) ? result : factor(num/x, result) ;
 }
 function round(value, decimals) {
-    return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+  return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
+}
+function palindrome() {
+  var x = [];
+  for (var i = 0; i < 999; i++) {
+    for (var j = 0; j < 999; j++) {
+      x.push(i * j);
+    }
+  }
 }
 function userMPT() {
   for (var i=1; i<=24; i++) {
