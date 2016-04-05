@@ -58,18 +58,19 @@ function palindrome(num) {
   var y = [];
   var pals = [];
   var prods = [];
-  for (var i = 0; i.toString().length < num + 1; i++) {
-    for (var j = 0; j.toString().length < num + 1; j++) {
+  for (var i = Math.pow(10, (num - 1)); i.toString().length < num + 1; i++) {
+    for (var j = Math.pow(10, (num - 1)); j.toString().length < num + 1; j++) {
       x.push(i * j);
-      y.push(i, j);
+      y.push([i, j]);
     }
   }
   for (number in x) {
     if (x[number] == reverse(x[number])) {
       pals.push(x[number]);
+      prods.push(y[x.indexOf(x[number])]);
     }
   }
-  return pals[pals.length - 1];
+  return Math.max.apply(Math, pals) + " : " + prods[pals.indexOf(Math.max.apply(Math, pals))];
 }
 function userMPT() {
   for (var i=1; i<=24; i++) {
