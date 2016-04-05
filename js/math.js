@@ -72,6 +72,15 @@ function palindrome(num) {
   }
   return Math.max.apply(Math, pals) + " : " + prods[pals.indexOf(Math.max.apply(Math, pals))];
 }
+function sumSquareDiff(num) {
+  var x = 0;
+  var y = 0;
+  for (var i = 0; i <= num; i++) {
+    x += Math.pow(i, 2);
+    y += i;
+  }
+  return Math.pow(y, 2) - x;
+}
 function userMPT() {
   for (var i=1; i<=24; i++) {
     money += (20*influence(num[i])*100);
