@@ -46,13 +46,14 @@ function round(value, decimals) {
 function reverse(x) {
   return x.toString().split("").reverse().join("");
 }
-function palindrome(num) {
+function palindrome(dig) {
+  var rep = (Math.pow(10, (dig - 1))).toString().replace(/0/g, "9").replace(/1/g, "9");
   var x = [];
   var y = [];
   var pals = [];
   var mults = [];
-  for (var i = Math.pow(10, (num - 1)); i.toString().length < num + 1; i++) {
-    for (var j = Math.pow(10, (num - 1)); j.toString().length < num + 1; j++) {
+  for (var i = rep; i > rep / 1.1; i--) {
+    for (var j = rep; j > rep / 1.1; j--) {
       x.push(i * j);
       y.push([i, j]);
     }
