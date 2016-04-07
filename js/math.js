@@ -47,6 +47,7 @@ function reverse(x) {
   return x.toString().split("").reverse().join("");
 }
 function palindrome(dig) {
+  var start = new Date().getTime();
   var rep = Math.pow(10, (dig - 1)).toString().replace(/0/g, "9").replace(/1/g, "9");
   function min() {
     if (dig == 2) {return 1.088;}
@@ -72,7 +73,9 @@ function palindrome(dig) {
       mults.push(y[x.indexOf(x[number])]);
     }
   }
-  return Math.max.apply(Math, pals) + " : " + mults[pals.indexOf(Math.max.apply(Math, pals))];
+  var end = new Date().getTime();
+  var time = end - start;
+  return Math.max.apply(Math, pals) + " : " + mults[pals.indexOf(Math.max.apply(Math, pals))] + " : executed in " + time + "ms";
 }
 function sumSquareDiff(num) {
   var x = 0;
