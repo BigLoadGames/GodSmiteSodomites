@@ -51,7 +51,7 @@ function palindrome(dig) {
   var rep = Math.pow(10, (dig - 1)).toString().replace(/0/g, "9").replace(/1/g, "9");
   function min() {
     if (dig == 2) {return 1.088;}
-    else if (dig == 3) {return 1.094;}
+    else if (dig == 3) {return 1.095;}
     else if (dig == 4) {return 1.01;}
     else if (dig == 5) {return 1.0032;}
     else if (dig == 6) {return 1.001;}
