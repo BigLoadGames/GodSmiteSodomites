@@ -55,7 +55,8 @@ function palindrome(dig) {
     else if (dig == 4) {return 1.01;}
     else if (dig == 5) {return 1.0032;}
     else if (dig == 6) {return 1.001;}
-    else {console.log("This might take a while...");return 1.001;}
+    else if (dig == 7) {return 1.00024;}
+    else {console.log("Anything higher than 7 WILL crash your browser.");return;}
   }
   var x = [];
   var y = [];
