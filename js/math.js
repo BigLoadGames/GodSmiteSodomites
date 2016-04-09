@@ -44,22 +44,26 @@ function round(value, decimals) {
   return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
 function reverse(x) {
-  var rev = [];
-  var last = x.toString().length - 1;
-  for (var i = 0; i < x.toString().length; i++)
-  {
-    rev.push(x.toString()[last]);
-    last--;
-  }
-  return rev.join("");
+  return x.toString().split("").reverse().join("");
 }
-function palindrome(num) {
+function palindrome(dig) {
+  var start = new Date().getTime();
+  var rep = Math.pow(10, (dig - 1)).toString().replace(/0/g, "9").replace(/1/g, "9");
+  function min() {
+    if (dig == 2) {return 1.088;}
+    else if (dig == 3) {return 1.095;}
+    else if (dig == 4) {return 1.01;}
+    else if (dig == 5) {return 1.0032;}
+    else if (dig == 6) {return 1.001;}
+    else if (dig == 7) {return 1.00024;}
+    else {console.log("Anything higher than 7 WILL crash your browser.");return;}
+  }
   var x = [];
   var y = [];
   var pals = [];
-  var prods = [];
-  for (var i = Math.pow(10, (num - 1)); i.toString().length < num + 1; i++) {
-    for (var j = Math.pow(10, (num - 1)); j.toString().length < num + 1; j++) {
+  var mults = [];
+  for (var i = rep; i > rep / min(); i--) {
+    for (var j = rep; j > rep / min(); j--) {
       x.push(i * j);
       y.push([i, j]);
     }
@@ -67,10 +71,12 @@ function palindrome(num) {
   for (number in x) {
     if (x[number] == reverse(x[number])) {
       pals.push(x[number]);
-      prods.push(y[x.indexOf(x[number])]);
+      mults.push(y[x.indexOf(x[number])]);
     }
   }
-  return Math.max.apply(Math, pals) + " : " + prods[pals.indexOf(Math.max.apply(Math, pals))];
+  var end = new Date().getTime();
+  var time = end - start;
+  return Math.max.apply(Math, pals) + " : " + mults[pals.indexOf(Math.max.apply(Math, pals))] + " : executed in " + time + "ms";
 }
 function sumSquareDiff(num) {
   var x = 0;
