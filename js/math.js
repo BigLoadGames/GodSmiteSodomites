@@ -46,14 +46,22 @@ function round(value, decimals) {
 function reverse(x) {
   return x.toString().split("").reverse().join("");
 }
-function FNRD(string) {
+function FNRL(string) {
+  var start = new Date().getTime();
   var split = string.split("").sort();
-  var orig = string.split("");
+  var orig = string;
+  var cL = "";
   for (var i = 0; i < split.length; i++) {
     if (split[i] == split[i+1]) {
-      return orig.join("").toString().replace(, "");
+      cL = split[i];
+      for (x in orig) {
+        orig = orig.replace(cL, "");
+      }
     }
   }
+  var end = new Date().getTime();
+  var time = end - start;
+  return orig[0] + ", executed in " + time + "ms";
 }
 function palindrome(dig) {
   var start = new Date().getTime();
