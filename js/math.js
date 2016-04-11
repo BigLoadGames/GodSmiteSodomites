@@ -46,6 +46,15 @@ function round(value, decimals) {
 function reverse(x) {
   return x.toString().split("").reverse().join("");
 }
+function FNRD(string) {
+  var split = string.split("").sort();
+  var orig = string.split("");
+  for (var i = 0; i < split.length; i++) {
+    if (split[i] == split[i+1]) {
+      return orig.join("").toString().replace(, "");
+    }
+  }
+}
 function palindrome(dig) {
   var start = new Date().getTime();
   var rep = Math.pow(10, (dig - 1)).toString().replace(/0/g, "9").replace(/1/g, "9");
