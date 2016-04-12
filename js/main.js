@@ -1,4 +1,4 @@
-/* Things to not forgot, that I will forget if I don't write down.
+/* Things to not forgot, that I will forget if I don't write them down.
 
 localStorage.setItem(")
 localStorage.getItem()
@@ -100,7 +100,9 @@ function info(name) {
 function leftSide(name) {
   document.getElementById("leftSide").innerHTML = name;
 }
-// Let's make a save/load function, which, of course, will only become functional later.
+function invade(city1, city2) {
+  // TODO
+}
 function save() {
   localStorage.removeItem("one");localStorage.removeItem("two");localStorage.removeItem("three");
   localStorage.removeItem("four");localStorage.removeItem("five");localStorage.removeItem("six");
