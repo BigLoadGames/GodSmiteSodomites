@@ -104,6 +104,21 @@ function sumSquareDiff(num) {
   }
   return Math.pow(y, 2) - x;
 }
+function LargestProduct(series, adjacent) {
+  var x = series.toString().split("");
+  var pos = 0;
+  var prods = [];
+  var adjs = [];
+  while (x.length > adjacent) {
+    prods[pos] = x[0];
+    for (var i = 1; i <= adjacent; i++) {
+      prods[pos] = prods[pos] * x[i];
+      x.splice(x[i-1]);
+    }
+    pos++;
+  }
+  return prods[0];
+}
 function userMPT() {
   for (var i=1; i<=24; i++) {
     money += (20*influence(num[i])*100);
