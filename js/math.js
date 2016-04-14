@@ -104,20 +104,25 @@ function sumSquareDiff(num) {
   }
   return Math.pow(y, 2) - x;
 }
-function LargestProduct(series, adjacent) {
-  var x = series.toString().split("");
-  var pos = 0;
-  var prods = [];
-  var adjs = [];
-  while (x.length > adjacent) {
-    prods[pos] = x[0];
-    for (var i = 1; i <= adjacent; i++) {
-      prods[pos] = prods[pos] * x[i];
-      x.splice(x[i-1]);
+Object.defineProperty(Array.prototype, 'group', {
+    value: function(chunkSize) {
+        var array=this;
+        return [].concat.apply([],
+            array.map(function(elem,i) {
+                return i%chunkSize ? [] : [array.slice(i,i+chunkSize)];
+            })
+        );
     }
-    pos++;
+});
+function LargestProduct(series, adjacent) {
+  var x = series.toString().split("").group(adjacent);
+  var y = [];
+  var temp = 1;
+  for (i in x) {
+    for (var j = 0; j < x[i].length; j++) {
+      temp *= x[i][j];
+    }
   }
-  return prods[0];
 }
 function userMPT() {
   for (var i=1; i<=24; i++) {
