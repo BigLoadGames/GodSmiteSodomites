@@ -115,14 +115,22 @@ Object.defineProperty(Array.prototype, 'group', {
     }
 });
 function LargestProduct(series, adjacent) {
-  var x = series.toString().split("").group(adjacent);
-  var y = [];
-  var temp = 1;
-  for (i in x) {
-    for (var j = 0; j < x[i].length; j++) {
-      temp *= x[i][j];
+  var s = [1,2,3,4,5,6,7];
+  var a = 3;
+  var x = 1;
+  var max = 0;
+  for (var i = 0; i < s.length; i++) {
+    for (var j = 0; j < a; j++) {
+      x *= s[i];
     }
+    if (x > max) {
+      max = x;
+    }
+    x = 1;
+    s.push(s[0]);
+    s.splice(0,1);
   }
+  return max;
 }
 function userMPT() {
   for (var i=1; i<=24; i++) {
