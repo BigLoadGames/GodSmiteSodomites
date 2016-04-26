@@ -26,6 +26,7 @@ function primeGen(x) {
   }
   return primes[x-1];
 }
+// I didn't write this function.
 function factor(num) {
   var root = Math.sqrt(num),
   result = arguments[1] || [],
@@ -104,6 +105,7 @@ function sumSquareDiff(num) {
   }
   return Math.pow(y, 2) - x;
 }
+// I didn't write this either, I just found it, but it might be useful later.
 Object.defineProperty(Array.prototype, 'group', {
     value: function(chunkSize) {
         var array=this;
@@ -115,20 +117,19 @@ Object.defineProperty(Array.prototype, 'group', {
     }
 });
 function LargestProduct(series, adjacent) {
-  var s = [1,2,3,4,5,6,7];
-  var a = 3;
+  var s = series.toString().split("");
   var x = 1;
-  var max = 0;
+  var max = 1;
   for (var i = 0; i < s.length; i++) {
-    for (var j = 0; j < a; j++) {
-      x *= s[i];
+    s.push(s[0]);
+    s.splice(0,1);
+    for (var j = 0; j < adjacent; j++) {
+      x *= s[j];
     }
-    if (x > max) {
+    if (max < x) {
       max = x;
     }
     x = 1;
-    s.push(s[0]);
-    s.splice(0,1);
   }
   return max;
 }
