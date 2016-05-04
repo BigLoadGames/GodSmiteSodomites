@@ -133,6 +133,29 @@ function LargestProduct(series, adjacent) {
   }
   return max;
 }
+function collatz(n) {
+  var x = n;
+  var col = [x];
+  while (x != 1) {
+    if (x % 2 == 0) {
+      x = x/2;
+    }
+    else {
+      x = (3 * x) + 1;
+    }
+    col.push(x);
+  }
+  return col;
+}
+function bigCollatz(max) {
+  var big = [0];
+  for (var i = 2; i < max; i++) {
+    if (collatz(i).length > big.length) {
+      big = collatz(i);
+    }
+  }
+  return big[0];
+}
 function userMPT() {
   for (var i=1; i<=24; i++) {
     money += (20*influence(num[i])*100);
