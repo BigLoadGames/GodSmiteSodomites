@@ -156,6 +156,15 @@ function bigCollatz(max) {
   }
   return big[0];
 }
+// This obviously shouldn't be used for something you need strong security on, as random seeds can be found, and therefore your password can be too.
+function passGen(length) {
+  var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*?";
+  var pass = [];
+  for (var i = 0; i < length; i++) {
+    pass.push(chars[Math.floor((Math.random() * chars.length) + 1)]);
+  }
+  return pass.join("");
+}
 function userMPT() {
   for (var i=1; i<=24; i++) {
     money += (20*influence(num[i])*100);
