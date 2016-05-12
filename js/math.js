@@ -165,6 +165,25 @@ function passGen(length) {
   }
   return pass.join("");
 }
+function log10(val) {
+  return Math.log(val) / Math.LN10;
+}
+function fibonacci(num) {
+  var seq = [1,1];
+  var x = 0;
+  while (seq.length < num) {
+    seq.push(seq[x] + seq[x+1]);
+    x++;
+  }
+  return seq[seq.length - 1];
+}
+function digFibonacci(dig) {
+  var seq = [];
+  for (var i = 0; log10(fibonacci(i - 1)) <= dig - 1; i++) {
+    seq.push(fibonacci(i));
+  }
+  return seq[seq.length - 1];
+}
 function userMPT() {
   for (var i=1; i<=24; i++) {
     money += (20*influence(num[i])*100);
