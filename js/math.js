@@ -158,10 +158,10 @@ function bigCollatz(max) {
 }
 // This obviously shouldn't be used for something you need strong security on, as random seeds can be found, and therefore your password can be too.
 function passGen(length) {
-  var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*?";
+  var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!#$%&()*+-./:;<=>@[]^_`~{}|?";
   var pass = [];
   for (var i = 0; i < length; i++) {
-    pass.push(chars[Math.floor((Math.random() * chars.length) + 1)]);
+    pass.push(chars[Math.floor(Math.random() * chars.length)]);
   }
   return pass.join("");
 }
