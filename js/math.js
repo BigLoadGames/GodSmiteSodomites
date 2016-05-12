@@ -177,6 +177,7 @@ function fibonacci(num) {
   }
   return seq[seq.length - 1];
 }
+// Javascript is not ideal for math. This works in python, but God, am I too lazy to figure out how to get this to work in js since it's basically useless anyway.
 function digFibonacci(dig) {
   var seq = [];
   for (var i = 0; log10(fibonacci(i - 1)) <= dig - 1; i++) {
