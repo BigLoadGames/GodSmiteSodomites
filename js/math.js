@@ -133,6 +133,58 @@ function LargestProduct(series, adjacent) {
   }
   return max;
 }
+function collatz(n) {
+  var x = n;
+  var col = [x];
+  while (x != 1) {
+    if (x % 2 == 0) {
+      x = x/2;
+    }
+    else {
+      x = (3 * x) + 1;
+    }
+    col.push(x);
+  }
+  return col;
+}
+function bigCollatz(max) {
+  var big = [0];
+  for (var i = 2; i < max; i++) {
+    if (collatz(i).length > big.length) {
+      big = collatz(i);
+    }
+  }
+  return big[0];
+}
+// This obviously shouldn't be used for something you need strong security on, as random seeds can be found, and therefore your password can be too.
+function passGen(length) {
+  var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!#$%&()*+-./:;<=>@[]^_`~{}|?";
+  var pass = [];
+  for (var i = 0; i < length; i++) {
+    pass.push(chars[Math.floor(Math.random() * chars.length)]);
+  }
+  return pass.join("");
+}
+function log10(val) {
+  return Math.log(val) / Math.LN10;
+}
+function fibonacci(num) {
+  var seq = [1,1];
+  var x = 0;
+  while (seq.length < num) {
+    seq.push(seq[x] + seq[x+1]);
+    x++;
+  }
+  return seq[seq.length - 1];
+}
+// Javascript is not ideal for math. This works in python, but God, am I too lazy to figure out how to get this to work in js since it's basically useless anyway.
+function digFibonacci(dig) {
+  var seq = [];
+  for (var i = 0; log10(fibonacci(i - 1)) <= dig - 1; i++) {
+    seq.push(fibonacci(i));
+  }
+  return seq[seq.length - 1];
+}
 function userMPT() {
   for (var i=1; i<=24; i++) {
     money += (20*influence(num[i])*100);
